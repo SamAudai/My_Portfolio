@@ -530,11 +530,7 @@ form .btn-2 {
 nav .fas {
     display: none;
 }
-@media (max-width: 950px) {
-    .back-video{        
-        width: auto;
-        height: 100%;
-    }
+@media (max-width: 950px) {   
 
     .header-text {
         margin-top: 370px;
@@ -610,10 +606,7 @@ nav .fas {
 }
 
 @media (max-width: 840px) {
-    .back-video{        
-        width: auto;
-        height: 100%;
-    }
+    
 
     .header-text {
         margin-top: 350px;
@@ -689,10 +682,7 @@ nav .fas {
 }
 
 @media (max-width: 550px) {
-    .back-video{        
-        width: auto;
-        height: 100%;
-    }
+    
 
     .header-text {
         margin-top: 200px;
@@ -768,11 +758,7 @@ nav .fas {
 }
 
 @media (max-width: 420px) {
-    .back-video{        
-        width: auto;
-        height: 100%;
-    }
-
+    
     .header-text {
         margin-top: 250px;
         font-size: 16px;
@@ -847,15 +833,7 @@ nav .fas {
 }
 
 @media (max-width: 290px) {
-    .back-video{        
-        width: auto;
-        height: 100%;
-    }
-
-    .header-text {
-        margin-top: 180px;
-        font-size: 16px;
-    }
+    
 
     .header-text h1 {
         font-size: 20px;
@@ -1030,4 +1008,17 @@ nav .fas {
         display: inline-block;
         transition: .5s;
     } 
+}
+
+@media(min-aspect-ratio: 16/9){
+    .back-video{        
+        width: 100%;
+        height: auto;
+    }
+}
+@media(max-aspect-ratio: 16/9){
+    .back-video{        
+        width: auto;
+        height: 100%;
+    }
 }
