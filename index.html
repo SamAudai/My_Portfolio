@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/portfolio.ico"> 
+    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="fontawesome/css/all.css">    
+    <title>PortFolio</title>
+</head>
+
+<body>
+    <!--HEADER SECTION-->
+    <div id="header">
+        <div class="container">
+            <video class="back-video" autoplay loop muted>
+                <source src="./img/production_id_4496268 (1080p).mp4" type="video/mp4">
+            </video>
+            <nav>
+                <img src="img/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#heder">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#service">services</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    <i class="fas fa-times" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openMenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h1>I'm <span>Audai</span><br> Alsharani from Syria</h1>
+            </div>
+        </div>
+    </div>
+
+    <!--ABOUT SECTION-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/20200810_092747499_iOS.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">about me</h1>
+                    <p>I am a highly organized person, hardworking and ambitious, 
+                        I like teamwork and I am looking for a real opportunity in a reputable organization.                         
+                        I have experience in agile software development and lean development, 
+                        as well as master some engineering practices to build quality into software.                        
+                    </p>
+                    <div class="tab-title">
+                        <p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-link" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-link" onclick="openTab('educaion')">Educaion</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills" onload="updateProgressBar('span')">
+                        <ul>
+                            <li>
+                                <span>Html , CSS</span>
+                                <div class="html-css skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip"  id="span">90%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Java Script</span>
+                                <div class="javascript skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip">75%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Angular</span>
+                                <div class="angular skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip">65%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>.NET Core</span>
+                                <div class="netcore skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip">80%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>NodeJS</span>
+                                <div class="nodejs skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip">70%</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Java , C++</span>
+                                <div class="java-c skill-bar">
+                                    <div class="skill-percentage">
+                                        <span class="tooltip">55%</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>2019 - Present</span><br>Web and desktop applications Designed<br>Freelancer</li>
+                            <li><span>2017 - Present</span><br>Web and desktop applications Development<br>Freelancer
+                            </li>
+                            <li><span>2017 - Present</span><br>Development of e-business and desktop applications
+                                <br>Swaida Health Directorate / Informatics Department
+                            </li>
+                            <li><span>2016 - Present</span><br>Database systems management
+                                <br>Swaida Health Directorate / Informatics Department
+                            </li>
+                            <li><span>2015 - 2019</span><br>IT support
+                                <br>Swaida Health Directorate / Informatics Department
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="educaion">
+                        <ul>
+                            <li><span>2014 - 2019</span><br>Damascus University
+                                <br>Bachelor in Information Technology Engineering
+                                <br>Software Engineering<br>GPA : 2.75
+                            </li>
+                            <li><span>2004 - 2006</span><br>Technical Institute for Applied Industries / Damascus
+                                <br>Diploma in Electron Sciences
+                                <br>Industrial Electronics<br>GPA : 3.25
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SERVICES SECTION-->
+    <div id="service">
+        <div class="container">
+            <h1 class="sub-title">my services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Web design refers to the design of websites that are displayed on the internet. 
+                        It usually refers to the user experience aspects of website development ...
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-crop-alt"></i>
+                    <h2>Software Engineering</h2>
+                    <p>I have experience in agile software development and lean development,
+                         in addition to mastering some engineering practices to build quality in software ...
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-desktop"></i>
+                    <h2>Application Development</h2>
+                    <p>Developing desktop applications using Dot Net Core technology, 
+                        such as warehouse management applications, student management, 
+                        electronic library, virtual school system and many other applications ...
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PORTFOLIO SECTION-->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">my portfolio</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="img/work-1.png" alt="">
+                    <div class="layer">
+                        <h3>Restaurant-Website</h3>
+                        <p>A restaurant site that offers a variety of dishes, 
+                            and the customer can reserve a table in it, 
+                            and there is also the possibility of reserving places for smokers. 
+                            The customer can rate the dish through an evaluation system integrated with the site.
+                        </p>
+                        <a href="https://github.com/SamAudai/Restorant-Website" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/work-2.png" alt="">
+                    <div class="layer">
+                        <h3>Story-Website</h3>
+                        <p>It is a simple website that presents a children's story. 
+                            It displays an animated background that expresses the content of that story.
+                        </p>
+                        <a href="https://github.com/SamAudai/Story-Website" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/work-1.png" alt="">
+                    <div class="layer">
+                        <h3>Algorithmic-Toolbox</h3>
+                        <p>It is a set of simple programs through which I have implemented a number of famous algorithms,
+                             and I implemented these programs in the Python language.
+                        </p>
+                        <a href="https://github.com/SamAudai/Algorithmic_Toolbox" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/SamAudai?tab=repositories" target="_blank" class="btn">see more</a>
+        </div>
+    </div>
+
+    <!--CONTACT SECTION-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">contact me</h1>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:audaisam5@gmail.com">audaisam5@gmail.com</a></p>
+                    <p><i class="fas fa-phone-square-alt"></i><a href="tel:+963931652715">+963 931 652 715</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/audai0" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.link/tl01y5" target="_blank"><i class="fab fa-whatsapp"></i></a>                        
+                        <a href="https://www.instagram.com/audai_alsharani/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/Audai_Alsharani" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://linkedin.com/in/audai-alsh-arani-100738211" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="img/My_CV.pdf" class="btn btn-2" download><i class="fa fa-download"></i>&nbsp;&nbsp;My CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="5" placeholder="Your Message"></textarea>
+                        <button id="button" type="submit" class="btn btn-2" onclick="onSubmit()"><span id="btn">Send</span></button>  
+                                                                                            
+                    </form>
+                    <a onclick="scrollToTop()" id="topBtn" class="top"><i class='fa fa-angle-double-up'></i></a>                                        
+                    <span id="msg"></span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright © Audai Alsharani 2023</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
