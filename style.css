@@ -531,8 +531,9 @@ nav .fas {
     display: none;
 }
 @media (max-width: 950px) {
-    #header {
-        background-image: url(img/pexels-lukas-mayer-785429.jpg);
+    .back-video{        
+        width: auto;
+        height: 100%;
     }
 
     .header-text {
@@ -609,8 +610,9 @@ nav .fas {
 }
 
 @media (max-width: 840px) {
-    #header {
-        background-image: url(img/pexels-lukas-mayer-785429.jpg);
+    .back-video{        
+        width: auto;
+        height: 100%;
     }
 
     .header-text {
@@ -687,8 +689,9 @@ nav .fas {
 }
 
 @media (max-width: 550px) {
-    #header {
-        background-image: url(img/pexels-lukas-mayer-785429.jpg);
+    .back-video{        
+        width: auto;
+        height: 100%;
     }
 
     .header-text {
@@ -765,8 +768,9 @@ nav .fas {
 }
 
 @media (max-width: 420px) {
-    #header {
-        background-image: url(img/pexels-lukas-mayer-785429.jpg);
+    .back-video{        
+        width: auto;
+        height: 100%;
     }
 
     .header-text {
@@ -843,8 +847,9 @@ nav .fas {
 }
 
 @media (max-width: 290px) {
-    #header {
-        background-image: url(img/pexels-lukas-mayer-785429.jpg);
+    .back-video{        
+        width: auto;
+        height: 100%;
     }
 
     .header-text {
