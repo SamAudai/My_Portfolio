@@ -214,7 +214,7 @@ nav ul li a:focus::after {
 }
 
 .angular .skill-percentage {
-    width: 65%;
+    width: 80%;
 }
 
 .netcore .skill-percentage {
@@ -223,6 +223,10 @@ nav ul li a:focus::after {
 
 .java-c .skill-percentage {
     width: 55%;
+}
+
+.cc .skill-percentage {
+    width: 75%;
 }
 
 .nodejs .skill-percentage {
