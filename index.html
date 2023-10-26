@@ -23,7 +23,7 @@
                 <ul id="sidemenu">
                     <li><a href="#heder"  onclick="closeMenu()">home</a></li>
                     <li><a href="#about"  onclick="closeMenu()">about</a></li>
-                    <li><a href="#service"  onclick="closeMenu()">services</a></li>
+                    <!-- <li><a href="#service"  onclick="closeMenu()">services</a></li> -->
                     <li><a href="#portfolio"  onclick="closeMenu()">portfolio</a></li>
                     <li><a href="#contact"  onclick="closeMenu()">contact</a></li>
                     <i class="fas fa-times" onclick="closeMenu()"></i>
@@ -91,7 +91,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>NodeJS</span>
+                                <span>NodeJS, Express</span>
                                 <div class="nodejs skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">70%</span>
@@ -158,7 +158,7 @@
     </div>
 
     <!--SERVICES SECTION-->
-    <div id="service">
+    <!-- <div id="service">
         <div class="container">
             <h1 class="sub-title">my services</h1>
             <div class="services-list">
@@ -168,7 +168,6 @@
                     <p>Web design refers to the design of websites that are displayed on the internet. 
                         It usually refers to the user experience aspects of website development ...
                     </p>
-                    <a href="#">learn more</a>
                 </div>
                 <div>
                     <i class="fas fa-crop-alt"></i>
@@ -176,7 +175,6 @@
                     <p>I have experience in agile software development and lean development,
                          in addition to mastering some engineering practices to build quality in software ...
                     </p>
-                    <a href="#">learn more</a>
                 </div>
                 <div>
                     <i class="fas fa-desktop"></i>
@@ -185,11 +183,17 @@
                         such as warehouse management applications, student management, 
                         electronic library, virtual school system and many other applications ...
                     </p>
-                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <h2>Courses instructor</h2>
+                    <p>Offering training courses in web development techniques and desktop applications for beginner, 
+                        intermediate and advanced levels...
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--PORTFOLIO SECTION-->
     <div id="portfolio">
@@ -197,35 +201,58 @@
             <h1 class="sub-title">my portfolio</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="img/work-1.png" alt="">
+                    <img src="img/work2.png" alt="">
                     <div class="layer">
-                        <h3>Restaurant-Website</h3>
-                        <p>A restaurant site that offers a variety of dishes, 
-                            and the customer can reserve a table in it, 
-                            and there is also the possibility of reserving places for smokers. 
-                            The customer can rate the dish through an evaluation system integrated with the site.
+                        <h3>User Management</h3>
+                        <p>A user management system implemented by Angular and .NET Core with an SQLite database.
                         </p>
-                        <a href="https://github.com/SamAudai/Restorant-Website" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/SamAudai/User_Management.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="img/work-2.png" alt="">
+                    <img src="img/work1.png" alt="">
                     <div class="layer">
-                        <h3>Story-Website</h3>
-                        <p>It is a simple website that presents a children's story. 
-                            It displays an animated background that expresses the content of that story.
+                        <h3>Portfolio Website</h3>
+                        <p>A website for displaying work and CVs that was implemented by Angular with a dummy data.
                         </p>
-                        <a href="https://github.com/SamAudai/Story-Website" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/SamAudai/Audai_Portfolio.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="img/work-1.png" alt="">
+                    <img src="img/work6.png" alt="">
                     <div class="layer">
-                        <h3>Algorithmic-Toolbox</h3>
+                        <h3>Algorithmic Toolbox</h3>
                         <p>It is a set of simple programs through which I have implemented a number of famous algorithms,
                              and I implemented these programs in the Python language.
                         </p>
                         <a href="https://github.com/SamAudai/Algorithmic_Toolbox" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/work4.png" alt="">
+                    <div class="layer">
+                        <h3>Restorant Server</h3>
+                        <p>Restaurant website backend implemented by NodeJS and express with mongoDB.
+                        </p>
+                        <a href="https://github.com/SamAudai/Restorant-Server.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/work3.png" alt="">
+                    <div class="layer">
+                        <h3>Restorant FrontEnd</h3>
+                        <p>Restaurant website frontend implemented by Angular.
+                        </p>
+                        <a href="https://github.com/SamAudai/Restorant-FrontEnd.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="img/work5.png" alt="">
+                    <div class="layer">
+                        <h3>Geodata</h3>
+                        <p>Using the Google Places API with a Database type SQLite and Visualizing Data on Google Map, implemented by Python.
+                        </p>
+                        <a href="https://github.com/SamAudai/Geodata.git" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
@@ -241,7 +268,7 @@
                     <h1 class="sub-title">contact me</h1>
                     <p><i class="fas fa-envelope"></i><a href="mailto:audaisam5@gmail.com">audaisam5@gmail.com</a></p>
                     <p><i class="fas fa-phone-square-alt"></i><a href="tel:+963931652715">+963 931 652 715</a></p>
-                    <p><i class="fas fa-globe"></i><a href="https://samaudai.github.io/My_Resume/" target="_blank">samaudai.github.io/My_Resume/</a></p>
+                    
                     <div class="social-icons">
                         <a href="https://www.facebook.com/audai0" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://wa.link/tl01y5" target="_blank"><i class="fab fa-whatsapp"></i></a>                        
