@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Aller_Std_Bd';
-    src: url('fontawesome/aller/Aller_BdIt.ttf');
+    src: url('../css/aller/Aller_BdIt.ttf');
 }
 
 * {
