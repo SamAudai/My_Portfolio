@@ -35,7 +35,7 @@ function onSubmit() {
             .then(() => {
                 msg.innerHTML = "Message sent successfully!";
                 btn.textContent = "Send"
-                setTimeout(function () {
+                setTimeout(()=> {
                     msg.innerHTML = ''                    
                 }, 3000);
 
@@ -72,3 +72,16 @@ window.onscroll = () => {
     topBtn.style.opacity = 0;
  }
 };
+
+const source = ['', '', '', ''];
+let sourceIndex = 0;
+let sourceCurrent = source[sourceIndex];
+function changeSkill(){
+    sourceIndex++;
+    if (sourceIndex >= source.length) {
+      this.sourceIndex = 0;
+    }
+    sourceCurrent = source[sourceIndex];
+    document.getElementById("skillDisplay").textContent = sourceCurrent;   
+  }
+setInterval(changeSkill, 4000);

@@ -15,9 +15,9 @@
     <!--HEADER SECTION-->
     <div id="header">
         <div class="container">
-            <video class="back-video" autoplay loop muted>
+            <!-- <video class="back-video" autoplay loop muted>
                 <source src="./img/production_id_4496268 (1080p).mp4" type="video/mp4">
-            </video>
+            </video> -->
             <nav>
                 <img src="img/logo.png" class="logo">
                 <ul id="sidemenu">
@@ -30,9 +30,14 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openMenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Software Engineer</p>
-                <h1>I'm <span>Audai</span><br> Alsharani from Syria</h1>
+            <div class="header-text cd-headline rotate-1">                
+                <h1>I'm <span>Audai</span><br> Alsharani from Syria</h1><br>
+                <span class="cd-words-wrapper">
+                    <b class="is-visible">Software Engineer</b>
+                    <b>Full Stack Web Developer</b>
+                    <b>Desktop Application Developer</b>
+                    <b>UX/UI Designer</b>
+                </span>
             </div>
         </div>
     </div>
@@ -299,7 +304,9 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
