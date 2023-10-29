@@ -1,9 +1,0 @@
-<div class="social-icons">
-                        <a href="https://www.facebook.com/audai0" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://wa.link/tl01y5" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/audai_alsharani/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://t.me/Audai_Alsharani" target="_blank"><i class="fab fa-telegram"></i></a>
-                        <a href="https://linkedin.com/in/audai-alsh-arani-100738211" target="_blank"><i
-                                class="fab fa-linkedin"></i></a>
-                    </div>
