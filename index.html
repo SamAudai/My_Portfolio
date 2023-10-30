@@ -23,7 +23,7 @@
                 <source src="./img/production_id_4496268 (1080p).mp4" type="video/mp4">
             </video> -->
             <nav>
-                <img src="img/logo.png" class="logo">
+                <img src="img/logo1.svg" class="logo">
                 <ul id="sidemenu">
                     <li><a href="#heder" onclick="closeMenu()">home</a></li>
                     <li><a href="#about" onclick="closeMenu()">about</a></li>
@@ -64,12 +64,12 @@
                     <div class="tab-title">
                         <p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
                         <p class="tab-link" onclick="openTab('experience')">Experience</p>
-                        <p class="tab-link" onclick="openTab('educaion')">Educaion</p>
+                        <p class="tab-link" onclick="openTab('educaion')">Education</p>
                     </div>
                     <div class="tab-content active-tab" id="skills" onload="updateProgressBar('span')">
                         <ul>
                             <li>
-                                <span>Html , CSS</span>
+                                <span id="tools">Html , CSS</span>
                                 <div class="html-css skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip" id="span">90%</span>
@@ -77,7 +77,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>Java Script</span>
+                                <span id="tools">Java Script</span>
                                 <div class="javascript skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">75%</span>
@@ -85,7 +85,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>Angular</span>
+                                <span id="tools">Angular</span>
                                 <div class="angular skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">80%</span>
@@ -93,7 +93,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>.NET Core</span>
+                                <span id="tools">.NET</span>
                                 <div class="netcore skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">80%</span>
@@ -101,7 +101,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>NodeJS, Express</span>
+                                <span id="tools">NodeJS, Express</span>
                                 <div class="nodejs skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">70%</span>
@@ -109,7 +109,7 @@
                                 </div>
                             </li>
                             <li>
-                                <span>C#</span>
+                                <span id="tools">C#</span>
                                 <div class="cc skill-bar">
                                     <div class="skill-percentage">
                                         <span class="tooltip">75%</span>
@@ -117,10 +117,10 @@
                                 </div>
                             </li>
                             <li>
-                                <span>Java , C++</span>
+                                <span id="tools">Java , C++, Python</span>
                                 <div class="java-c skill-bar">
                                     <div class="skill-percentage">
-                                        <span class="tooltip">55%</span>
+                                        <span class="tooltip">60%</span>
                                     </div>
                                 </div>
                             </li>
@@ -275,8 +275,10 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">contact me</h1>
-                    <p><i class="fas fa-envelope"></i><a href="mailto:audaisam5@gmail.com">audaisam5@gmail.com</a></p>
-                    <p><i class="fas fa-phone-square-alt"></i><a href="tel:+963931652715">+963 931 652 715</a></p>
+                    <p><svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"> <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" fill="#ed0a3f"></path> </svg>
+                        <a href="mailto:audaisam5@gmail.com">audaisam5@gmail.com</a></p>
+                    <p><svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16"> <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" fill="#ed0a3f"></path> </svg>
+                        <a href="tel:+963931652715">+963 931 652 715</a></p>
 
                     <div class="social">
                         <span>Social</span>
@@ -294,8 +296,8 @@
                           </a>
                       </div>
 
-                    <a href="img/AR_CV.pdf" class="btn btn-2" download><i class="fa fa-download"></i>&nbsp;&nbsp;My
-                        CV</a>
+                    <a href="img/AR_CV.pdf" class="btn btn-2" id="download" download><svg style="color: rgb(245, 245, 245);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" fill="#f5f5f5"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" fill="#f5f5f5"></path> </svg>
+                        &nbsp;&nbsp;C.V</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -314,7 +316,7 @@
         </div>
 
         <div class="copyright">
-            <p>Copyright © Audai Alsharani 2023</p>
+            <p>Eng. Audai Alsharani 2023</p>
         </div>
     </div>
 
