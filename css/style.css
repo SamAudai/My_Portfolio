@@ -1204,7 +1204,11 @@ nav .fas {
 
     nav .fas {
         display: block;
-        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .logo {
+        width: 200px;
     }
 
     nav ul {
@@ -1221,17 +1225,13 @@ nav .fas {
 
     nav ul li {
         display: block;
-        margin: 25px;
+        margin: 35px 20px;
     }
 
     nav ul .fas {
         position: absolute;
         left: 25px;
         top: 25px;
-    }
-
-    nav .fas {
-        cursor: pointer;
     }
 
     .sub-title {
