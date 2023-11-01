@@ -690,22 +690,10 @@ form .btn-2 {
 .top {
     position: fixed;
     bottom: 5rem;
-    right: .3rem;
+    right: .1rem;
     scroll-behavior: smooth;
     animation: action 1s infinite alternate;
 
-}
-
-.top i {
-    color: #fff;
-    background: transparent;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 0.5rem;
-}
-
-.top i:hover {
-    background-color: #ED0A3F;
 }
 
 @keyframes action {
