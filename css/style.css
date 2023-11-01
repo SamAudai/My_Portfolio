@@ -28,18 +28,16 @@ body {
     color: #0092E4;
 }
 
+.container {
+    padding: 30px 10%;
+}
+
+
 /********************************HEADER SECTION STYLE*****************************/
 #header {
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
 }
-
-.container {
-    padding: 10px 10%;
-}
-
 
 nav {
     display: flex;
@@ -330,10 +328,6 @@ nav ul li a:focus::after {
 
 
 /********************************ABOUT SECTION STYLE*****************************/
-#about {
-    padding: 80px 0;
-    color: #ababab;
-}
 
 .row {
     display: flex;
@@ -348,7 +342,7 @@ nav ul li a:focus::after {
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .about-col-2 {
@@ -366,6 +360,7 @@ nav ul li a:focus::after {
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    color: #0092E4;
 }
 
 .tab-link::after {
@@ -482,10 +477,6 @@ nav ul li a:focus::after {
 }
 
 /******************PORTFOLIO SECTION STYLE******************************/
-#portfolio {
-    padding: 50px 0;
-    /*top right bottom left*/
-}
 
 .title{
     color: #0092E4;
@@ -495,15 +486,14 @@ nav ul li a:focus::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 50px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .btn {
     display: block;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     width: fit-content;
     border: 1px solid #ED0A3F;
-
     border-radius: 10px;
     text-decoration: none;
     text-transform: capitalize;
@@ -610,12 +600,14 @@ nav ul li a:focus::after {
 }
 
 /******************CONTACT SECTION STYLE******************************/
+
 .contact-left {
     flex-basis: 35%;
 }
 
 .contact-right {
     flex-basis: 60%;
+    margin-top: 10px;
 }
 
 .contact-left p {
@@ -1202,6 +1194,26 @@ nav .fas {
     }
 }
 
+@media (max-width: 350px) {
+
+    .header-text {
+        margin-top: 40%;
+        font-size: 13px;
+    }
+    .header-text h1 {
+        font-size: 22px;
+    }
+    .cd-words-wrapper {
+        transform: translateY(-15px);
+    }
+    .contact-left p a {
+        color: #ababab;
+        font-size: 14px;
+        text-decoration: none;
+        transition: .5s;
+    }  
+}
+
 @media (max-width: 290px) {
 
 
@@ -1253,21 +1265,21 @@ nav .fas {
         cursor: pointer;
     }
 
-    .sub-title {
-        font-size: 40px;
+    .sub-title{
+        font-size: 23px;
+    }
+    .sub-title p{
+        font-size: 17px;
     }
 
     .about-col-1,
     .about-col-2 {
         flex-basis: 100%;
     }
-
-    .about-col-1 {
-        margin-bottom: 30px;
-    }
-
     .about-col-2 {
+        margin-top: auto;
         font-size: 14px;
+        transform: translateX(-10px);
     }
 
     .tab-link {
@@ -1305,14 +1317,10 @@ nav .fas {
         transition: 0.5s
     }
 
-    #portfolio {
-        padding: 30px 0;
-        /*top right bottom left*/
-    }
 
     .work-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
         grid-gap: 40px;
         margin-top: 30px;
 
@@ -1325,7 +1333,7 @@ nav .fas {
     }
 
     .card__content {
-        width: 80%;
+        width: 100%;
         background: linear-gradient(rgba(0, 0, 0, .6), #ED0A3F);
         border-radius: 10px;
         position: absolute;
@@ -1338,13 +1346,13 @@ nav .fas {
         flex-direction: column;
         padding: 0 10px;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
         transition: .5s;
     }
 
     .card__content p {
         font-weight: 500;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .card__content a {
@@ -1361,7 +1369,7 @@ nav .fas {
     }
 
 
-    .contact-left p i {
+    .contact-left p  {
         margin-right: 15px;
         color: #ED0A3F;
         font-size: 20px;
@@ -1369,9 +1377,8 @@ nav .fas {
     }
 
     .contact-left p a {
-        margin-right: 15px;
         color: #ababab;
-        font-size: 15px;
+        font-size: 12px;
         text-decoration: none;
         transition: .5s;
     }
