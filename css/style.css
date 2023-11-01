@@ -690,7 +690,7 @@ form .btn-2 {
 .top {
     position: fixed;
     bottom: 5rem;
-    right: .1rem;
+    right: .2rem;
     scroll-behavior: smooth;
     animation: action 1s infinite alternate;
 
