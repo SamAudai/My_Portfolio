@@ -24,14 +24,14 @@
             <nav>
                 <img src="img/logo1.svg" class="logo">
                 <ul id="sidemenu">
-                    <li><a href="#heder" onclick="closeMenu()">home</a></li>
-                    <li><a href="#about" onclick="closeMenu()">about</a></li>
-                    <!-- <li><a href="#service"  onclick="closeMenu()">services</a></li> -->
+                    <li><a href="#header" onclick="closeMenu()">about</a></li>
+                    <li><a href="#about" onclick="closeMenu()">resume</a></li>
                     <li><a href="#portfolio" onclick="closeMenu()">portfolio</a></li>
                     <li><a href="#contact" onclick="closeMenu()">contact</a></li>
                     <svg class="fas" width="30" hight="30" onclick="closeMenu()" xmlns="http://www.w3.org/2000/svg" fill="whitesmoke" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21,17h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,17,21,17z M21,13h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,13,21,13z M13,7h8c0.6,0,1-0.4,1-1s-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1S12.4,7,13,7z M21,9h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,9,21,9z M9,5C8.4,5,8,5.4,8,6v12c0,0.6,0.4,1,1,1h0c0.6,0,1-0.4,1-1V6C10,5.4,9.6,5,9,5z M3.6,9.6C3.2,9.2,2.6,9.3,2.2,9.7c-0.4,0.4-0.3,1.1,0.1,1.4L3.4,12l-1.1,0.9C2.1,13.1,2,13.4,2,13.7c0,0.6,0.4,1,1,1c0.2,0,0.5-0.1,0.6-0.2l2-1.7c0,0,0.1-0.1,0.1-0.1c0.4-0.4,0.3-1.1-0.1-1.4L3.6,9.6z"/></svg>
                 </ul>
                 <svg class="fas" width="30" hight="30" onclick="openMenu()" xmlns="http://www.w3.org/2000/svg" fill="whitesmoke" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M21,17h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,17,21,17z M21,13h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,13,21,13z M13,7h8c0.6,0,1-0.4,1-1s-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1S12.4,7,13,7z M21,9h-8c-0.6,0-1,0.4-1,1s0.4,1,1,1h8c0.6,0,1-0.4,1-1S21.6,9,21,9z M9,5C8.4,5,8,5.4,8,6v12c0,0.6,0.4,1,1,1h0c0.6,0,1-0.4,1-1V6C10,5.4,9.6,5,9,5z M4.6,12l1.1-0.9c0.4-0.4,0.5-1,0.1-1.4c-0.4-0.4-1-0.5-1.4-0.1l-2,1.7c0,0-0.1,0.1-0.1,0.1c-0.4,0.4-0.3,1.1,0.1,1.4l2,1.7c0.2,0.1,0.4,0.2,0.6,0.2c0.3,0,0.6-0.1,0.8-0.4c0.4-0.4,0.3-1.1-0.1-1.4L4.6,12z"/></svg>
+            
             </nav>
             <div class="header-text cd-headline rotate-1">
                 <h1>I'm <span>Audai</span><br> Alsharani from Syria</h1><br>
@@ -41,6 +41,7 @@
                     <b>Desktop Application Developer</b>
                     <b>UX/UI Designer</b>
                 </span>
+                
             </div>
         </div>
     </div>
@@ -48,23 +49,58 @@
     <!--ABOUT SECTION-->
     <div id="about">
         <div class="container">
+            <h1 class="sub-title">my resume</h1>
             <div class="row">
                 <div class="about-col-1">
                     <img src="img/20200810_092747499_iOS.jpg" alt="">
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">about me</h1>
-                    <p>I am a highly organized person, hardworking and ambitious,
-                        I like teamwork and I am looking for a real opportunity in a reputable organization.
-                        I have experience in agile software development and lean development,
-                        as well as master some engineering practices to build quality into software.
-                    </p>
+                <div class="about-col-2">                  
                     <div class="tab-title">
-                        <p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
-                        <p class="tab-link" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-link active-link" onclick="openTab('experience')">Experience</p>
                         <p class="tab-link" onclick="openTab('educaion')">Education</p>
+                        <p class="tab-link" onclick="openTab('skills')">Skills</p>
                     </div>
-                    <div class="tab-content active-tab" id="skills" onload="updateProgressBar('span')">
+                    <div class="tab-content active-tab" id="experience">
+                        <ul>
+                            <li><span>1/2023 - 6/2023</span><br>UI/UX Designer
+                                <br>Cham International Virtual School
+                                <br>Collaborated closely with cross-functional teams including developers and product
+                                managers to ensure design alignment with project goals.
+                            </li>
+                            <li><span>2/2023 - 3/2023</span><br>Courses instructor
+                                <br>Sun Development Center
+                                <br>Implemented interactive learning activities in training sessions, leading to
+                                increased engagement and retention among participants.
+                            </li>
+                            <li><span>2017 - Present</span><br>Software Developer
+                                <br>Freelancer
+                                <br>Created a cross-platform desktop application using .NET Core.
+                            </li>
+                            <li><span>2017 - Present</span><br>Full Stack Web Developer
+                                <br>Freelancer
+                                <br>Designed and implemented interactive and user-friendly front-end interfaces using
+                                HTML, CSS, and Angular.
+                            </li>
+                            <li><span>2015 - Persent</span><br>IT support
+                                <br>Freelancer
+                                <br>Proficient in providing technical support and troubleshooting for hardware,
+                                software, and network issues.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="educaion">
+                        <ul>
+                            <li><span>2014 - 2019</span><br>Damascus University
+                                <br>Bachelor in Information Technology Engineering
+                                <br>Software Engineering<br>GPA : 2.75
+                            </li>
+                            <li><span>2004 - 2006</span><br>Technical Institute for Applied Industries / Damascus
+                                <br>Diploma in Electron Sciences
+                                <br>Industrial Electronics<br>GPA : 3.25
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="skills">
                         <ul>
                             <li>
                                 <span id="tools"><svg style="color: rgb(255, 87, 51);" width="25" height="25" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -141,46 +177,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-content" id="experience">
-                        <ul>
-                            <li><span>1/2023 - 6/2023</span><br>UI/UX Designer
-                                <br>Cham International Virtual School
-                                <br>Collaborated closely with cross-functional teams including developers and product
-                                managers to ensure design alignment with project goals.
-                            </li>
-                            <li><span>2/2023 - 3/2023</span><br>Courses instructor
-                                <br>Sun Development Center
-                                <br>Implemented interactive learning activities in training sessions, leading to
-                                increased engagement and retention among participants.
-                            </li>
-                            <li><span>2017 - Present</span><br>Software Developer
-                                <br>Freelancer
-                                <br>Created a cross-platform desktop application using .NET Core.
-                            </li>
-                            <li><span>2017 - Present</span><br>Full Stack Web Developer
-                                <br>Freelancer
-                                <br>Designed and implemented interactive and user-friendly front-end interfaces using
-                                HTML, CSS, and Angular.
-                            </li>
-                            <li><span>2015 - Persent</span><br>IT support
-                                <br>Freelancer
-                                <br>Proficient in providing technical support and troubleshooting for hardware,
-                                software, and network issues.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-content" id="educaion">
-                        <ul>
-                            <li><span>2014 - 2019</span><br>Damascus University
-                                <br>Bachelor in Information Technology Engineering
-                                <br>Software Engineering<br>GPA : 2.75
-                            </li>
-                            <li><span>2004 - 2006</span><br>Technical Institute for Applied Industries / Damascus
-                                <br>Diploma in Electron Sciences
-                                <br>Industrial Electronics<br>GPA : 3.25
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -196,8 +193,8 @@
                     <div class="card__content">
                       <p class="card__title">User Management</p>
                       <p class="card__description">A user management system implemented with Angular and .NET Core with an SQLite database...</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/User_Management.git" target="_blank">
-                        <svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/User_Management.git" target="_blank">
+                        <svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                           <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                         </svg>
                       </a>
@@ -208,7 +205,7 @@
                     <div class="card__content">
                       <p class="card__title">Portfolio Website</p>
                       <p class="card__description">A website for displaying work and CVs that was implemented by Angular with a dummy data...</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/Audai_Portfolio.git" target="_blank"><svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/Audai_Portfolio.git" target="_blank"><svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                         <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                       </svg></a>
                     </div>
@@ -218,7 +215,7 @@
                     <div class="card__content">
                       <p class="card__title">Portfolio Website</p>
                       <p class="card__description">This project is portfolio website that created using ASP.Net core and SQL Server...</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/.Net-Core.git" target="_blank"><svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/.Net-Core.git" target="_blank"><svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                         <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                       </svg></a>
                     </div>
@@ -228,7 +225,7 @@
                     <div class="card__content">
                       <p class="card__title">Restaurant BackEnd</p>
                       <p class="card__description">A restaurant website backend implemented with NodeJS, express and mongoDB...</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/Restorant-Server.git" target="_blank"><svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/Restorant-Server.git" target="_blank"><svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                         <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                       </svg></a>
                     </div>
@@ -238,7 +235,7 @@
                     <div class="card__content">
                       <p class="card__title">Restaurant FrontEnd</p>
                       <p class="card__description">A restaurant interface for a previous backend implemented with Angular....</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/Restorant-FrontEnd.git" target="_blank"><svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/Restorant-FrontEnd.git" target="_blank"><svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                         <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                       </svg></a>
                     </div>
@@ -249,7 +246,7 @@
                       <p class="card__title">Geodata</p>
                       <p class="card__description">Google Places API with a database SQLite and Visualizing Data on Google Map,
                         implemented with Python...</p>                      
-                      <a class="btn" href="https://github.com/SamAudai/Geodata.git" target="_blank"><svg width="40" height="40" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
+                      <a class="card__btn" href="https://github.com/SamAudai/Geodata.git" target="_blank"><svg width="35" height="35" fill="#0092E4" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="github">
                         <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"></path>
                       </svg></a>
                     </div>
@@ -263,9 +260,9 @@
     <!--CONTACT SECTION-->
     <div id="contact">
         <div class="container">
+            <h1 class="sub-title">contact me</h1>
             <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">contact me</h1>
+                <div class="contact-left">                    
                     <p><svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"> <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" fill="#ed0a3f"></path> </svg>
                         <a href="mailto:audaisam5@gmail.com">audaisam5@gmail.com</a></p>
                     <p><svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16"> <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" fill="#ed0a3f"></path> </svg>

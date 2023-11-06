@@ -46,14 +46,16 @@ nav {
     flex-wrap: wrap;
 }
 
-.logo {
-    width: 260px;
+nav .logo {
+    width: 230px;
+    transform: translateX(-7px);
+    margin-top: 7px;
 }
 
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 10px 15px;
 }
 
 nav ul li a {
@@ -327,31 +329,34 @@ nav ul li a:focus::after {
 }
 
 
+
 /********************************ABOUT SECTION STYLE*****************************/
 
 .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .about-col-1 {
-    flex-basis: 35%;
+    flex-basis: 38%;
 }
 
 .about-col-1 img {
     width: 100%;
+    height: auto;
     border-radius: 15px;
     margin-top: 20px;
 }
 
 .about-col-2 {
-    flex-basis: 60%;
+    flex-basis: 58%;
 }
 
 .tab-title {
     display: flex;
-    margin: 20px 0 40px;
+    margin: 10px 0 25px;
 }
 
 .tab-link {
@@ -484,30 +489,16 @@ nav ul li a:focus::after {
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 50px;
     margin-top: 40px;
 }
 
-.btn {
-    display: block;
-    margin: 50px auto 20px auto;
-    width: fit-content;
-    border: 1px solid #ED0A3F;
-    border-radius: 10px;
-    text-decoration: none;
-    text-transform: capitalize;
-    color: whitesmoke;
-    transition: all .1s ease-in-out;
-    overflow: hidden;
-    font-weight: 500;
-    font-size: 18px;
-}
 
 .card {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 225px;
     aspect-ratio: 16/9;
     background-color: #ED0A3F;
     border-radius: 10px;
@@ -559,24 +550,39 @@ nav ul li a:focus::after {
 }
 
 .card__description {
-    margin: 10px 0 10px;
+    margin: 10px 0;
     font-size: 13px;
     font-weight: 600;
-    color: whitesmoke;
     line-height: 2;
+    color: whitesmoke;
+}
+
+.card__btn svg{
+    display: flow-root;
+    transition: transform 0.5s;;
+}
+
+.card__btn svg:hover{
+    transform: scale(0.93);
+    fill: #ED0A3F;
 }
 
 .btn {
-    display: grid;
+    display: block;
+    margin: 50px auto 20px auto;
+    width: fit-content;
+    border: 1px solid #ED0A3F;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: whitesmoke;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 18px;    
     place-items: center;
     background: transparent;
     padding: 14px 50px;
-    border-radius: 10px;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0);
-    cursor: pointer;
-    transition: transform 0.5s;
 }
 
 .btn:hover {
@@ -585,18 +591,8 @@ nav ul li a:focus::after {
         -0.5px -0.5px 0px rgba(255, 255, 255, 1),
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transform: translateY(0.5em);
+    border: 1px solid rgba(0, 0, 0, 0.1);    
     background: #ED0A3F;    
-}
-
-.btn svg {
-    transition: transform 0.5s;
-}
-
-.btn:hover svg {
-    transform: scale(0.9);
-    fill: #333333;
 }
 
 /******************CONTACT SECTION STYLE******************************/
@@ -607,16 +603,15 @@ nav ul li a:focus::after {
 
 .contact-right {
     flex-basis: 60%;
-    margin-top: 10px;
 }
 
 .contact-left p {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .contact-left p svg {
     margin-right: 3px;
-    transform: translateY(5px);
+    transform: translateY(38%);
 }
 
 .contact-left p a {
@@ -632,15 +627,6 @@ nav ul li a:focus::after {
 }
 
 
-.contact-left .social-icons a {
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: .5s;
-}
-
 .btn-2 {
     display: inline-block;
     background: transparent;
@@ -648,6 +634,7 @@ nav ul li a:focus::after {
 
 .contact-right form {
     width: 100%;
+    transform: translateY(-5%);
 }
 
 form input,
@@ -717,12 +704,12 @@ form .btn-2 {
     justify-content: center;
     background: transparent;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
     height: 50px;
     width: 200px;
     margin-top: 35px;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 
 .social::before,
@@ -751,7 +738,7 @@ form .btn-2 {
 }
 
 .social:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);    
 }
 
 .social:hover span {
@@ -861,14 +848,18 @@ nav .fas {
 @media (max-width: 950px) {
 
     .header-text {
-        margin-top: 370px;
-        font-size: 40px;
+        margin-top: 40px;
+        font-size: 23px;
     }
 
     .header-text h1 {
-        font-size: 55px;
+        font-size: 37px;
     }
 
+    .cd-words-wrapper {
+        transform: translateY(-20px);
+    }
+    
     nav .fas {
         display: block;
         font-size: 25px;
@@ -907,7 +898,7 @@ nav .fas {
 
     .about-col-1,
     .about-col-2 {
-        flex-basis: 100%;
+        flex-basis: 47%;
     }
 
     .about-col-1 {
@@ -916,7 +907,7 @@ nav .fas {
 
     .about-col-2 {
         font-size: 14px;
-    }
+    } 
 
     .tab-link {
         font-size: 16px;
@@ -925,7 +916,7 @@ nav .fas {
 
     .contact-left,
     .contact-right {
-        flex-basis: 100%;
+        flex-basis: 50%;
     }
 
     .contact-right {
@@ -1021,15 +1012,15 @@ nav .fas {
 
     .header-text {
         margin-top: 40%;
-        font-size: 25px;
+        font-size: 21px;
     }
 
     .header-text h1 {
-        font-size: 35px;
+        font-size: 30px;
     }
     
     .cd-words-wrapper {
-        transform: translateY(-25px);
+        transform: translateY(-20px);
     } 
 
     nav .fas {
@@ -1074,7 +1065,7 @@ nav .fas {
     }
 
     .about-col-1 {
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
 
     .about-col-2 {
@@ -1182,24 +1173,29 @@ nav .fas {
     }
 }
 
-@media (max-width: 350px) {
-
+@media (max-width: 350px) {  
     .header-text {
-        margin-top: 40%;
-        font-size: 13px;
+        margin-top: 60%;
+        font-size: 18px;
     }
     .header-text h1 {
-        font-size: 22px;
+        font-size: 26px;
+    }
+    nav .logo {
+        width: 200px;
+        margin-top: 0px;
     }
     .cd-words-wrapper {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
     }
+    .row {
+        margin-top: 0px;
+        transform: translateY(-12px);
+    }
+    
     .contact-left p a {
-        color: #ababab;
         font-size: 14px;
-        text-decoration: none;
-        transition: .5s;
-    }  
+    }   
 }
 
 @media (max-width: 290px) {
@@ -1318,43 +1314,16 @@ nav .fas {
         border-radius: 10px;
         position: relative;
         overflow: hidden;
+        height: 245px;
     }
 
-    .card__content {
-        width: 100%;
-        background: linear-gradient(rgba(0, 0, 0, .6), #ED0A3F);
-        border-radius: 10px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0 10px;
-        text-align: center;
-        font-size: 12px;
-        transition: .5s;
-    }
+   
 
     .card__content p {
-        font-weight: 500;
-        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 13px;
     }
-
-    .card__content a {
-        margin-top: 20px;
-        color: #ED0A3F;
-        text-decoration: none;
-        font-size: 18px;
-        line-height: 60px;
-        background: #fff;
-        width: 60px;
-        height: 60px;
-        border-radius: 50px;
-        text-align: center;
-    }
+    
 
 
     .contact-left p  {
