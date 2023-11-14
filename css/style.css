@@ -581,7 +581,7 @@ nav ul li a:focus::after {
     font-weight: 500;
     font-size: 18px;    
     place-items: center;
-    background: transparent;
+    background: #262626;
     padding: 14px 50px;
 }
 
@@ -629,7 +629,6 @@ nav ul li a:focus::after {
 
 .btn-2 {
     display: inline-block;
-    background: transparent;
 }
 
 .contact-right form {
@@ -648,6 +647,7 @@ form textarea {
     color: #fff;
     font-size: 18px;
     border-radius: 5px;
+    border: 1px solid #ED0A3F;
 }
 
 form .btn-2 {
@@ -834,7 +834,7 @@ nav .fas {
 @media (max-width: 1200px) {
 
     .header-text {
-        margin-top: 20%;
+        margin-top: 15%;
         font-size: 40px;
     }
     .header-text h1 {
@@ -848,12 +848,12 @@ nav .fas {
 @media (max-width: 950px) {
 
     .header-text {
-        margin-top: 40px;
-        font-size: 23px;
+        margin-top: 50%;
+        font-size: 40px;
     }
 
     .header-text h1 {
-        font-size: 37px;
+        font-size: 55px;
     }
 
     .cd-words-wrapper {
@@ -928,7 +928,7 @@ nav .fas {
 
 
     .header-text {
-        margin-top: 350px;
+        margin-top: 40%;
         font-size: 40px;
     }
 
@@ -1090,7 +1090,7 @@ nav .fas {
 @media (max-width: 420px) {
 
     .header-text {
-        margin-top: 80%;
+        margin-top: 60%;
         font-size: 20px;
     }
 
@@ -1175,7 +1175,7 @@ nav .fas {
 
 @media (max-width: 350px) {  
     .header-text {
-        margin-top: 60%;
+        margin-top: 50%;
         font-size: 18px;
     }
     .header-text h1 {
@@ -1202,18 +1202,18 @@ nav .fas {
 
 
     .header-text {
-        margin-top: 85%;
+        margin-top: 65%;
         font-size: 13px;
     }
 
     .header-text h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     .cd-words-wrapper {
         transform: translateY(-15px);
     }
 
-    .logo {
+    nav .logo {
         width: 180px;
     }
 

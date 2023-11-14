@@ -72,12 +72,12 @@ window.onscroll = () => {
     topBtn.style.opacity = 0;
  }
 };
-/* 
-const sr = ScrollReveal ({
+
+/* const sr = ScrollReveal ({
 	distance: '40px',
 	duration: 2700,
 	reset: true
 });
 sr.reveal('.work-list',{delay:200, origin:'bottom'})
 sr.reveal('.contact-left, .about-col-1',{delay:200, origin:'left'});
-sr.reveal('.contact-right form, .about-col-2',{delay:200, origin:'right'}) */
+sr.reveal('.contact-right form, .about-col-2',{delay:200, origin:'right'})  */
