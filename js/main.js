@@ -2,6 +2,7 @@ let tabLinks = document.getElementsByClassName('tab-link');
 let tabContents = document.getElementsByClassName('tab-content');
 
 let sidemenu = document.getElementById('sidemenu');
+let menu = document.querySelector('#checkbox');
 
 function openTab(tabName) {
     for (var tabLink of tabLinks) {
@@ -11,9 +12,13 @@ function openTab(tabName) {
         tabContent.classList.remove("active-tab");
     }
 
-    this.event.currentTarget.classList.add('active-link');
+    this.event.currentTarget.classList.add('active-link');    
     document.getElementById(tabName).classList.add('active-tab');
 }
+
+menu.onclick = () => {
+	sidemenu.classList.toggle('active');
+};
 
 function openMenu() {
     this.sidemenu.style.right = '0px';
@@ -73,11 +78,12 @@ window.onscroll = () => {
  }
 };
 
-/* const sr = ScrollReveal ({
+const sr = ScrollReveal ({
 	distance: '40px',
 	duration: 2700,
 	reset: true
 });
-sr.reveal('.work-list',{delay:200, origin:'bottom'})
+
+/* sr.reveal('.work-list',{delay:200, origin:'bottom'})
 sr.reveal('.contact-left, .about-col-1',{delay:200, origin:'left'});
 sr.reveal('.contact-right form, .about-col-2',{delay:200, origin:'right'})  */
