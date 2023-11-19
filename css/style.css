@@ -1,3 +1,8 @@
+:root{
+    --color: rgba(114, 114, 114, 0.3);
+    --background-color: #ED0A3F;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +17,6 @@ html {
 body {
     width: 100%;
     height: 100%;
-    --color: rgba(114, 114, 114, 0.3);
     background-color: #191a1a;
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
@@ -76,7 +80,7 @@ nav ul li a::after {
 	position: absolute;
 	width: 0;
 	height: 2px;
-	background: #ED0A3F;
+	background: var(--background-color);
 	bottom: -3px;
 	left: 0;
 	transition: ease .40s;
@@ -110,7 +114,7 @@ nav ul li a:focus::after {
   .bars {
     width: 100%;
     height: 4px;
-    background-color: #ED0A3F;
+    background-color: var(--background-color);
     border-radius: 5px;
     transition-duration: .3s;
   }
@@ -149,7 +153,7 @@ nav ul li a:focus::after {
 }
 
 .header-text h1 span {
-    color: #ED0A3F;
+    color: var(--background-color);
 }
 
 
@@ -161,7 +165,7 @@ nav ul li a:focus::after {
 }
 
 .cd-words-wrapper b {
-    color: #ED0A3F;
+    color: var(--background-color);
     display: inline-block;
     position: absolute;
     white-space: nowrap;
@@ -424,7 +428,7 @@ nav ul li a:focus::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ED0A3F;
+    background: var(--background-color);
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -441,7 +445,7 @@ nav ul li a:focus::after {
 }
 
 .tab-content ul li span {
-    color: #ED0A3F;
+    color: var(--background-color);
     font-size: 14px;
 }
 
@@ -470,7 +474,7 @@ nav ul li a:focus::after {
     width: 0;
     height: 100%;
     font-weight: bolder;
-    background-color: #ED0A3F;
+    background-color: var(--background-color);
     position: relative;
     animation: animation 2s forwards;
 }
@@ -512,7 +516,7 @@ nav ul li a:focus::after {
 .tooltip {
     width: 45px;
     height: 30px;
-    color: #000;
+    color: var(--color);
     background-color: #fff;
     border-radius: 18px;
     display: grid;
@@ -552,7 +556,7 @@ nav ul li a:focus::after {
     width: 100%;
     height: 225px;
     aspect-ratio: 16/9;
-    background-color: #ED0A3F;
+    background-color: var(--background-color);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -597,7 +601,7 @@ nav ul li a:focus::after {
 .card__title {
     margin: 0;
     font-size: 20px;
-    color: #ED0A3F;
+    color: var(--background-color);
     font-weight: 700;
 }
 
@@ -617,14 +621,14 @@ nav ul li a:focus::after {
 
 .card__btn svg:hover {
     transform: scale(0.93);
-    fill: #ED0A3F;
+    fill: var(--background-color);
 }
 
 .btn {
     display: block;
     margin: 50px auto 20px auto;
     width: fit-content;
-    border: 1px solid #ED0A3F;
+    border: 1px solid var(--background-color);
     border-radius: 10px;
     text-decoration: none;
     text-transform: capitalize;
@@ -645,7 +649,7 @@ nav ul li a:focus::after {
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #ED0A3F;
+    background: var(--background-color);
 }
 
 
@@ -678,7 +682,7 @@ nav ul li a:focus::after {
 }
 
 .contact-left p a:hover {
-    color: #ED0A3F;
+    color: var(--background-color);
 }
 
 
@@ -702,7 +706,7 @@ form textarea {
     color: #fff;
     font-size: 18px;
     border-radius: 5px;
-    border: 1px solid #ED0A3F;
+    border: 1px solid var(--background-color);
 }
 
 form .btn-2 {
@@ -782,14 +786,14 @@ form .btn-2 {
     content: "";
     left: 0;
     justify-content: flex-end;
-    background-color: #ED0A3F;
+    background-color: var(--background-color);
 }
 
 .social::after {
     content: "";
     right: 0;
     justify-content: flex-start;
-    background-color: #ED0A3F;
+    background-color: var(--background-color);
 }
 
 .social:hover {
@@ -915,7 +919,7 @@ form .btn-2 {
 		left: 0;
 		right: 0;
 		flex-direction: column;
-		background: #ED0A3F;
+		background: var(--background-color);
 		text-align: right;
 		transition: all .40s;
     }
@@ -923,11 +927,11 @@ form .btn-2 {
     nav ul li a{
        display: block;
 		margin: 10px;
-		border-right: 2px solid #000;
+		border-right: 2px solid #191a1a;
 		color: #fff;
     }
     nav ul li a:hover{
-		background: #000;
+		background: #191a1a;
 		color: #fff;
 	}
 	nav ul li a::after{
