@@ -1,8 +1,13 @@
 let tabLinks = document.getElementsByClassName('tab-link');
 let tabContents = document.getElementsByClassName('tab-content');
 
-let sidemenu = document.getElementById('sidemenu');
-let menu = document.querySelector('#checkbox');
+let sidemenu = document.querySelector('#sidemenu');
+let menu = document.querySelector('#checkbox1');
+
+let topBtn = document.getElementById("topBtn");
+
+let moon = document.querySelector('.moon');
+let sun = document.querySelector('.sun');
 
 function openTab(tabName) {
     for (var tabLink of tabLinks) {
@@ -12,37 +17,33 @@ function openTab(tabName) {
         tabContent.classList.remove("active-tab");
     }
 
-    this.event.currentTarget.classList.add('active-link');    
+    this.event.currentTarget.classList.add('active-link');
     document.getElementById(tabName).classList.add('active-tab');
 }
 
-menu.onclick = () => {
-	sidemenu.classList.toggle('active');
-};
-
-function openMenu() {
-    this.sidemenu.style.right = '0px';
-}
-function closeMenu() {
-    this.sidemenu.style.right = '-200px';
+menu.onclick = ()=> {
+    sidemenu.classList.toggle('active');
 }
 
 function onSubmit() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwEL3blOQxK2VZSXseIjKcjbq2Oflw8qcr6vfNPHvaKpVX1akokqacnryfTkGPwXfRJeQ/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLUc2Mx4omFleC-W8CMYrybIKaMv8lDTjb6yDevt1Z9GiMsuQ4QAUkxrSJmyMhjU4A/exec';
     const form = document.forms['submit-to-google-sheet'];
     const msg = document.getElementById('msg');
-    let btn = document.getElementById('btn');        
-    
+    let loader = document.getElementById('loader');
+    let button = document.getElementById('button');
+
     form.addEventListener('submit', e => {
-        e.preventDefault();        
-        btn.textContent = 'Process...';           
+        e.preventDefault();
+        loader.style.display = "inline-flex";
+        button.classList.add('disabled');
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(() => {
                 msg.innerHTML = "Message sent successfully!";
-                btn.textContent = "Send"
-                setTimeout(()=> {
-                    msg.innerHTML = ''                    
-                }, 3000);
+                loader.style.display = "none";                
+                setTimeout(() => {
+                    msg.innerHTML = '';
+                    button.classList.remove('disabled');
+                }, 2000);
 
                 form.reset();
             })
@@ -50,40 +51,54 @@ function onSubmit() {
     })
 }
 
-let rootElement = document.documentElement;
 function scrollToTop() {
-    rootElement.scrollTo({
+    document.documentElement.scrollTo({
         top: 0,
-        behavior: "smooth",        
+        behavior: "smooth",
     })
 }
 
-let topBtn = document.getElementById("topBtn");
-// When the page is loaded, hide the scroll-to-top button
-window.onload = () => {
-    topBtn.style.visibility = "hidden";
-    topBtn.style.opacity = 0;
+const sr = ScrollReveal({
+    distance: '50px',
+    duration: 2700,
+    reset: true
+});
+sr.reveal('.header-text', { delay: 200, origin: 'left' });
+sr.reveal('.header-image', { delay: 200, origin: 'right' });
+
+function setThemeMode() {
+    if (document.body.classList.contains('light')) {
+        document.body.classList.remove('light');
+        sun.style.display = "inline-flex";
+        moon.style.display = "none";
+        localStorage.setItem('icon',"inline-flex")
+        localStorage.setItem('theme', 'body');
+
+    } else {
+        sun.style.display = "none";
+        moon.style.display = "inline-flex";
+        document.body.classList.add('light');
+        localStorage.setItem('icon',"inline-flex")
+        localStorage.setItem('theme', 'light');
+    }
 }
-// If the page is scrolled more than 150px,
-// display the scroll-to-top button
-// Otherwise keep the button hidden
-window.onscroll = () => {
- if (window.scrollY > 150) {
-    topBtn.style.visibility = "visible";
-    topBtn.style.opacity = 1;
-    topBtn.style.cursor = "pointer";
- } else {
+
+window.onload = () => {
+    document.body.classList.add(localStorage.getItem("theme"));
+    if (localStorage.getItem('theme') == 'light') {
+        moon.style.display = localStorage.getItem('icon')||'inline-flex';
+    } else {
+        sun.style.display = localStorage.getItem('icon')||'inline-flex';
+    }
+    
     topBtn.style.visibility = "hidden";
-    topBtn.style.opacity = 0;
- }
 };
 
-const sr = ScrollReveal ({
-	distance: '40px',
-	duration: 2700,
-	reset: true
-});
-
-/* sr.reveal('.work-list',{delay:200, origin:'bottom'})
-sr.reveal('.contact-left, .about-col-1',{delay:200, origin:'left'});
-sr.reveal('.contact-right form, .about-col-2',{delay:200, origin:'right'})  */
+window.onscroll = ()=> {
+    if (window.scrollY > 150) {
+        topBtn.style.visibility = "visible";
+        topBtn.style.cursor = "pointer";
+    } else {
+        topBtn.style.visibility = "hidden";
+    }
+};
