@@ -593,11 +593,31 @@ nav ul li a:focus::after {
     margin: 10px 0 25px 0;
 }
 
-.tab-content ul li span {
-    color: var(--bg-color);
+.tab-content ul li p {
+    margin-bottom: 4px;
     font-size: 14px;
+    font-weight: 500;
 }
-
+.tab-content ul li p.date {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+.tab-content ul li p.work{
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+}
+.tab-content ul li p.place{
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+}
+.tab-content ul li p.task{
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+}
 .tab-content {
     display: none;
 }
@@ -658,18 +678,23 @@ nav ul li a:focus::after {
     width: 70%;
 }
 
+.tab-content ul li span.tooltip {
+    color: var(--bg-color);
+    bottom: 15px;
+}
+
 .tooltip {
     width: 40px;
-    height: 30px;
+    height: 33px;
     background-color: var(--text-color);
     border-radius: 8px;
     display: grid;
     place-items: center;
-    padding: 0.3em;
-    font-size: 1rem;
+    padding: .4em;
+    font-size: .9rem;
     position: absolute;
     right: var(--direction-tooltip);
-    bottom: 16px;
+    bottom: 17px;
 }
 
 .tooltip::after {
@@ -932,7 +957,7 @@ form .btn-2 {
 #msg {
     color: #1be01b;
     margin-top: -40px;
-    display: block;
+    display: none;
 }
 
 .contact-right svg {
@@ -1009,34 +1034,35 @@ form .btn-2 {
     display: none;
     width: 130px;
     height: 4px;
+    margin: 0 15px;
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.loader::before {
+    background-color: var(--text-color);
+    position: fixed;
+  }
+  
+  .loader::before {
     content: "";
     position: absolute;
     background: var(--main-color);
     top: 0;
-    left: 0;
+    left: 0;;
     width: 0%;
     height: 100%;
     border-radius: 30px;
-    animation: moving 1s ease-in-out infinite;
-}
-
-@keyframes moving {
+    animation: moving 1s ease-in-out infinite;    
+  }
+  
+  @keyframes moving {
     50% {
-        width: 100%;
+      width: 100%;
     }
-
+  
     100% {
-        width: 0;
-        right: 0;
-        left: unset;
+      width: 0;
+      right: 0;
+      left: unset;
     }
-}
+  }
 
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/

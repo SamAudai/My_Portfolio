@@ -34,14 +34,14 @@ function onSubmit() {
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        loader.style.display = "inline-flex";
+        loader.style.display = "block";
         button.classList.add('disabled');
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(() => {
-                msg.innerHTML = "Message sent successfully!";
+                msg.style.display = "block";
                 loader.style.display = "none";                
                 setTimeout(() => {
-                    msg.innerHTML = '';
+                    msg.style.display = "none";
                     button.classList.remove('disabled');
                 }, 2000);
 

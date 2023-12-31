@@ -49,6 +49,7 @@
    "Send":"Send",
    "Email":"audaisam5@gmail.com",
    "Phone":"+963 931 652 715",
+   "msg":"Message sent successfully!",
 
    "User Management":"User Management",
    "User Management description":"A user management system implemented with Angular and .NET Core with an SQLite database...",

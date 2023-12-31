@@ -93,44 +93,51 @@
                     </div>
                     <div class="tab-content active-tab" id="experience">
                         <ul>
-                            <li><span>1/2023 - 6/2023</span>
-                                <p translate="work1"></p>
-                                <p translate="place1"></p>
-                                <p translate="task1"></p>
+                            <li>
+                                <p class="date">1/2023 - 6/2023</p>
+                                <p class="work" translate="work1"></p>
+                                <p class="place" translate="place1"></p>
+                                <p class="task" translate="task1"></p>
                             </li>
-                            <li><span>1/2023 - 6/2023</span>
-                                <p translate="work2"></p>
-                                <p translate="place2"></p>
-                                <p translate="task2"></p>
+                            <li>
+                                <p id="date">1/2023 - 6/2023</p>
+                                <p class="work" translate="work2"></p>
+                                <p class="place" translate="place2"></p>
+                                <p class="task" translate="task2"></p>
                             </li>
-                            <li><span>2/2023 - 3/2023</span>
-                                <p translate="work3"></p>
-                                <p translate="place3"></p>
-                                <p translate="task3"></p>
+                            <li>
+                                <p id="date">2/2023 - 3/2023</p>
+                                <p class="work" translate="work3"></p>
+                                <p class="place" translate="place3"></p>
+                                <p class="task" translate="task3"></p>
                             </li>
-                            <li><span>2017 - Present</span>
-                                <p translate="work4"></p>
-                                <p translate="place4"></p>
-                                <p translate="task4"></p>
+                            <li>
+                                <p id="date">2017 - Present</p>
+                                <p class="work" translate="work4"></p>
+                                <p class="place" translate="place4"></p>
+                                <p class="task" translate="task4"></p>
                             </li>
-                            <li><span>2015 - Persent</span>
-                                <p translate="work5"></p>
-                                <p translate="place5"></p>
-                                <p translate="task5"></p>
+                            <li>
+                                <p id="date">2015 - Persent</p>
+                                <p class="work" translate="work5"></p>
+                                <p class="place" translate="place5"></p>
+                                <p class="task" translate="task5"></p>
                             </li>
                         </ul>
                     </div>
                     <div class="tab-content" id="educaion">
                         <ul>
-                            <li><span>2014 - 2019</span>
-                                <p translate="University1"></p>
-                                <p translate="Certificate1"></p>
-                                <p translate="Specialization1"></p>
+                            <li>
+                                <p class="date">2014 - 2019</p>
+                                <p class="work" translate="University1"></p>
+                                <p class="place" translate="Certificate1"></p>
+                                <p class="task" translate="Specialization1"></p>
                             </li>
-                            <li><span>2004 - 2006</span>
-                                <p translate="University2"></p>
-                                <p translate="Certificate2"></p>
-                                <p translate="Specialization2"></p>
+                            <li>
+                                <p class="date">2004 - 2006</p>
+                                <p class="work" translate="University2"></p>
+                                <p class="place" translate="Certificate2"></p>
+                                <p class="task" translate="Specialization2"></p>
                             </li>
                         </ul>
                     </div>
@@ -495,8 +502,9 @@
                         <h4 translate="Your Message"></h4>
                         <textarea name="Message" rows="5"></textarea>
                         <button id="button" type="submit" class="btn btn-2" onclick="onSubmit()" translate="Send">
-                            <!-- <span id="btn" translate="Send"></span> -->
-                        </button>                        
+                            
+                        </button>
+                        <span id="loader" class="loader"></span>                        
                     </form>
                     <svg onclick="scrollToTop()" id="topBtn" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                         fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
@@ -506,9 +514,8 @@
                         <path fill-rule="evenodd"
                             d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
                         </path>
-                    </svg>                    
-                    <span id="msg"></span>
-                    <span id="loader" class="loader"></span>                    
+                    </svg>                                                  
+                    <span id="msg" translate="msg"></span>                                      
                 </div>
             </div>
 

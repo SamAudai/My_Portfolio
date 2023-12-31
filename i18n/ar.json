@@ -49,6 +49,7 @@
    "Send":"ارسال",
    "Email":"audaisam5@gmail.com",
    "Phone":"715 652 931 963+",
+   "msg":"تم التسليم بنجاح!",
 
    "User Management":"ادارة المستخدميين",
    "User Management description":"نظام إدارة المستخدميين مع الصلاحيات، تم تنفيذه باستخدام Angular و.NET Core مع قاعدة بيانات SQLite...",
