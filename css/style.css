@@ -73,7 +73,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: var(--bg-color);
-     box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
         inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
         -0.5px -0.5px 0px rgba(255, 255, 255, 1),
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
@@ -125,7 +125,7 @@ nav ul li a:focus::after {
     width: 70%;
 }
 
-.lang{
+.lang {
     display: flex;
 }
 
@@ -134,7 +134,7 @@ nav ul li a:focus::after {
     color: var(--text-color);
     font-size: calc(var(--p-font)-0.2);
     font-weight: 600;
-    padding: 0px 13px;    
+    padding: 0px 13px;
     cursor: pointer;
 }
 
@@ -598,26 +598,31 @@ nav ul li a:focus::after {
     font-size: 14px;
     font-weight: 500;
 }
+
 .tab-content ul li p.date {
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
 }
-.tab-content ul li p.work{
+
+.tab-content ul li p.work {
     color: var(--main-color);
     font-size: 15px;
     font-weight: 600;
 }
-.tab-content ul li p.place{
+
+.tab-content ul li p.place {
     color: var(--text-color);
     font-size: 15px;
     font-weight: 600;
 }
-.tab-content ul li p.task{
+
+.tab-content ul li p.task {
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
 }
+
 .tab-content {
     display: none;
 }
@@ -713,8 +718,8 @@ nav ul li a:focus::after {
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 10fr));
-    grid-gap: 50px;
+    grid-template-columns:repeat(auto-fit , minmax(282px ,1fr)) ;
+    grid-gap: 40px;
     margin-top: 40px;
 }
 
@@ -789,17 +794,17 @@ nav ul li a:focus::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: var(--secound-color);
     font-weight: 400;
     width: 40px;
     height: 40px;
     border-radius: 0.375rem;
     background: var(--main-color);
-    transition-duration: 0.5s;
+    transition-duration: .3s;
 }
 
 .card__btn:hover {
-    transform: translateY(0.75rem);
+    transform: translateY(3px);
     border-radius: 50%;
     background: linear-gradient(to left, #2d0b27, #310413);
 }
@@ -807,7 +812,7 @@ nav ul li a:focus::after {
 
 .card__btn svg {
     position: relative;
-    transition: transform 0.5s;
+    transition: transform 0.3s;
     border-radius: 0.375rem;
     width: 1.35rem;
 }
@@ -818,12 +823,12 @@ nav ul li a:focus::after {
 }
 
 .card__btn span {
-    position: fixed;
+    position: absolute;
     display: none;
 }
 
 .card__btn:hover span {
-    color: var(--text-color);
+    color: var(--secound-color);
     display: inline-flex;
     font-size: 0.875rem;
     transform: translateY(2rem);
@@ -832,20 +837,20 @@ nav ul li a:focus::after {
 
 .btn {
     display: block;
-    margin: 50px auto 20px auto;
+    margin: 28px auto 0px auto;
     width: fit-content;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--text-color);
     border-radius: 10px;
     text-decoration: none;
     text-transform: capitalize;
-    color: whitesmoke;
+    color: var(--text-color);
     transition: all .5s ease-in-out;
     overflow: hidden;
     font-weight: 500;
     font-size: 18px;
     place-items: center;
-    background: #262626;
     padding: 14px 50px;
+    background-color: transparent;
 }
 
 .btn:hover {
@@ -893,11 +898,6 @@ nav ul li a:focus::after {
     color: var(--main-color);
 }
 
-
-.btn-2 {
-    display: inline-block;
-}
-
 .contact-right form {
     width: 100%;
     transform: translateY(-5%);
@@ -911,12 +911,12 @@ nav ul li a:focus::after {
 form input,
 form textarea {
     width: 100%;
-    border: 1px solid transparent;
+    border: 1px solid var(--text-color);
     outline: none;
-    background: #262626;
+    background: transparent;
     padding: 10px;
     margin: 15px 0;
-    color: #fff;
+    color: var(--text-color);
     font-size: 18px;
     border-radius: 10px;
 }
@@ -929,10 +929,10 @@ form textarea:focus {
 }
 
 form .btn-2 {
+    display: inline-flex;
     padding: 14px 60px;
-    margin-top: 20px;
+    margin: 0px;
     cursor: pointer;
-    transition: all 1s;
 }
 
 .disabled {
@@ -956,7 +956,6 @@ form .btn-2 {
 
 #msg {
     color: #1be01b;
-    margin-top: -40px;
     display: none;
 }
 
@@ -1034,35 +1033,36 @@ form .btn-2 {
     display: none;
     width: 130px;
     height: 4px;
-    margin: 0 15px;
+    margin: 5px 15px 0;
     border-radius: 30px;
     background-color: var(--text-color);
     position: fixed;
-  }
-  
-  .loader::before {
+}
+
+.loader::before {
     content: "";
     position: absolute;
     background: var(--main-color);
     top: 0;
-    left: 0;;
+    left: 0;
+    ;
     width: 0%;
     height: 100%;
     border-radius: 30px;
-    animation: moving 1s ease-in-out infinite;    
-  }
-  
-  @keyframes moving {
+    animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
     50% {
-      width: 100%;
+        width: 100%;
     }
-  
+
     100% {
-      width: 0;
-      right: 0;
-      left: unset;
+        width: 0;
+        right: 0;
+        left: unset;
     }
-  }
+}
 
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/
@@ -1072,13 +1072,15 @@ form .btn-2 {
     .container {
         padding: 80px 10%;
     }
+
     .row-header {
         margin-top: 12%;
     }
-   
+
     .toggle {
         display: inline-flex;
-    }    
+    }
+
     nav {
         padding: 15px;
     }
@@ -1108,7 +1110,7 @@ form .btn-2 {
 
     nav ul li a:hover {
         background: #262626;
-        
+
     }
 
     nav ul li a::after {
@@ -1123,9 +1125,11 @@ form .btn-2 {
         font-size: 45px;
         font-weight: 600;
     }
+
     .row-about {
         justify-content: flex-start;
     }
+
     .about-col-1,
     .about-col-2 {
         flex-basis: 100%;
@@ -1137,8 +1141,8 @@ form .btn-2 {
 
     .about-col-2 {
         font-size: 14px;
-    }    
-    
+    }
+
     .tab-link {
         margin: 0 10px;
         font-size: 13px;
@@ -1155,7 +1159,7 @@ form .btn-2 {
     }
 }
 
-@media (max-width: 800px) {    
+@media (max-width: 800px) {
 
     nav .logo {
         max-width: 35%;
@@ -1164,13 +1168,14 @@ form .btn-2 {
     .lang a {
         font-size: 15px;
         font-weight: 600;
-        padding: 0px 4px; 
+        padding: 0px 4px;
     }
+
     .lang a::after {
         margin: 0px;
         bottom: -2px;
     }
-    
+
     .lang a:hover::after,
     .lang a:focus::after {
         width: 100%;
@@ -1185,14 +1190,17 @@ form .btn-2 {
         font-size: 40px;
         margin-bottom: 15px;
     }
+
     .row-header .header-text h4 {
         font-size: 20px;
         font-weight: 600;
     }
+
     .row-header .header-text span.slogen p {
         font-size: 17px;
         margin-bottom: 9px;
     }
+
     .row-header .header-image img {
         width: 335px;
     }
@@ -1205,7 +1213,7 @@ form .btn-2 {
         font-size: 14px;
     }
 
-    
+
 }
 
 @media (max-width: 540px) {
@@ -1213,26 +1221,30 @@ form .btn-2 {
     .lang a {
         font-size: 11px;
         font-weight: 600;
-        padding: 0px 3px; 
+        padding: 0px 3px;
     }
-    
-    .row-header .header-text h1 {        
+
+    .row-header .header-text h1 {
         font-size: 35px;
         font-weight: 600;
         margin-bottom: 12px;
     }
+
     .row-header .header-text h4 {
         font-size: 16px;
         margin-bottom: 5px;
     }
+
     .row-header .header-text span.words {
         font-size: 16px;
         margin-bottom: 17px;
     }
+
     .row-header .header-text span.slogen p {
         font-size: 14px;
         margin-bottom: 9px;
     }
+
     .row-header .header-image img {
         width: 285px;
     }

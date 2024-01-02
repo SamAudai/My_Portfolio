@@ -38,7 +38,7 @@ function onSubmit() {
         button.classList.add('disabled');
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
             .then(() => {
-                msg.style.display = "block";
+                msg.style.display = "inline-block";
                 loader.style.display = "none";                
                 setTimeout(() => {
                     msg.style.display = "none";
