@@ -23,13 +23,24 @@ async function changeLanguage(lang) {
     setLanguagePreference(lang);    
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
-    toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
+    toggleArabicStyle(lang); // Toggle Arabic stylesheet
+    toggleArabicEnglish(lang)
 }
 
 // Function to toggle Arabic stylesheet based on language selection
-function toggleArabicStylesheet(lang) {   
+function toggleArabicStyle(lang) {   
     if (lang === 'ar') {
         document.body.classList.add('direction');
+    }
+}
+
+// Function to toggle Arabic/English display based on language selection
+function toggleArabicEnglish(lang) {   
+    if (lang === 'ar') {
+        document.getElementById('en').style.display = "block";
+    }
+    if(lang === 'en'){
+        document.getElementById('ar').style.display = "block";
     }
 }
 
@@ -38,5 +49,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
     const langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
-    toggleArabicStylesheet(userPreferredLanguage);
+    toggleArabicStyle(userPreferredLanguage);
+    toggleArabicEnglish(userPreferredLanguage);
 });

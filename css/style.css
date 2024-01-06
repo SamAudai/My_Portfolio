@@ -40,7 +40,7 @@ body {
     color: var(--text-color);
 }
 
-.container {
+section {
     width: 100%;
     height: 100%;
     padding: 100px 10%;
@@ -79,7 +79,7 @@ nav {
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 15px 9%;
+    padding: 15px 8%;
     transition: .3s;
 }
 
@@ -125,17 +125,19 @@ nav ul li a:focus::after {
     width: 70%;
 }
 
-.lang {
-    display: flex;
-}
-
 .lang a {
     position: relative;
     color: var(--text-color);
-    font-size: calc(var(--p-font)-0.2);
+    font-size: calc(var(--p-font)*0.8);
     font-weight: 600;
-    padding: 0px 13px;
+    padding: 0px 10px;
     cursor: pointer;
+}
+#en{
+    display: none;
+}
+#ar{
+    display: none;
 }
 
 .lang a::after {
@@ -184,7 +186,7 @@ nav ul li a:focus::after {
 }
 
 #checkbox1:checked+.toggle .bars {
-    margin-left: 11px;
+    margin-left: 8px;
 }
 
 #checkbox1:checked+.toggle #bar2 {
@@ -206,30 +208,25 @@ nav ul li a:focus::after {
     transform-origin: left center;
 }
 
-.switch {
-    position: relative;
-    width: 25px;
-    height: 35px;
-    cursor: pointer;
-}
-
 .sun {
-    position: absolute;
+    position: relative;
     fill: var(--text-color);
     top: 5px;
     z-index: 1;
     width: 23px;
     height: 23px;
     display: none;
+    cursor: pointer;
 }
 
 .moon {
-    position: absolute;
+    position: relative;
     top: 5px;
     z-index: 1;
     width: 23px;
     height: 23px;
     display: none;
+    cursor: pointer;
 }
 
 .sun {
@@ -538,7 +535,7 @@ nav ul li a:focus::after {
 
 .row-about {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -546,7 +543,8 @@ nav ul li a:focus::after {
 
 
 .about-col-1 {
-    flex-basis: 38%;
+    display: block;
+    flex-basis: 40%;
 }
 
 .about-col-1 img {
@@ -556,7 +554,8 @@ nav ul li a:focus::after {
 }
 
 .about-col-2 {
-    flex-basis: 58%;
+    display: block;
+    flex-basis: 60%;
 }
 
 .tab-title {
@@ -758,7 +757,7 @@ nav ul li a:focus::after {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     box-sizing: border-box;
     background-color: var(--dark-color);
@@ -862,51 +861,52 @@ nav ul li a:focus::after {
 
 
 /******************CONTACT SECTION STYLE******************************/
+.row-contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 
 .contact-left {
-    flex-basis: 35%;
+    display: block;
+    flex-basis: 40%;
     margin-top: 20px;
 }
 
 .contact-right {
+    display: block;
     flex-basis: 60%;
-    margin-top: 20px;
 }
 
-.contact-left .contact {
-    display: flex;
-    flex-direction: column;
+
+.contact-left ul li{
+    position: relative;    
+    margin: 20px;
 }
 
-.contact-left .contact .contact-link {    
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 15px;
-}
-
-.contact-left .contact .contact-link a {
+.contact-left ul li a {
     color: var(--text-color);
     font-size: 18px;
     text-decoration: none;
     transition: .5s;
-    margin: 0 5px;
+}
+.contact-left ul li svg {
+    transform: translateY(8px);
 }
 
-.contact-left .contact .contact-link a:hover {
+.contact-left ul li a:hover {
     color: var(--main-color);
 }
 
 .contact-left .social {
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
 }
 
 .contact-left .social .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 17px;
+    position: relative;
+    margin: 10px 21px;
     transform: scale(1.1);
 }
 
@@ -933,17 +933,16 @@ nav ul li a:focus::after {
 
 .contact-right form {
     width: 100%;
-    transform: translateY(-5%);
 }
 
 .contact-right h4 {
-    font-weight: 100;
+    font-weight: 500;
     transform: translateY(12px);
 }
 
 form input,
 form textarea {
-    width: 100%;
+    width: 90%;
     border: 1px solid var(--text-color);
     outline: none;
     background: transparent;
@@ -986,11 +985,6 @@ form .btn-2 {
     margin-top: 0px;
 }
 
-#msg {
-    color: #1be01b;
-    display: none;
-}
-
 .contact-right svg {
     position: fixed;
     bottom: 5rem;
@@ -1000,7 +994,6 @@ form .btn-2 {
     animation: action 1s infinite alternate;
 
 }
-
 @keyframes action {
     0% {
         transform: translateY(0);
@@ -1011,6 +1004,11 @@ form .btn-2 {
     }
 }
 
+#msg {
+    position: absolute;
+    color: #11ad11;
+    display: none;    
+}
 
 .loader {
     display: none;
@@ -1019,9 +1017,8 @@ form .btn-2 {
     margin: 5px 15px 0;
     border-radius: 30px;
     background-color: var(--text-color);
-    position: fixed;
+    position: absolute;
 }
-
 .loader::before {
     content: "";
     position: absolute;
@@ -1034,7 +1031,6 @@ form .btn-2 {
     border-radius: 30px;
     animation: moving 1s ease-in-out infinite;
 }
-
 @keyframes moving {
     50% {
         width: 100%;
@@ -1052,57 +1048,18 @@ form .btn-2 {
 
 
 @media (max-width: 970px) {
-    .container {
-        padding: 80px 10%;
-    }
 
     .row-header {
         margin-top: 12%;
     }
 
-    .toggle {
-        display: inline-flex;
-    }
-
-    nav {
-        padding: 15px;
-    }
-
-    nav .logo {
-        max-width: 36%;
-    }
-
-    nav ul {
-        position: absolute;
-        top: -600px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--main-color);
-        transition: all .40s;
-    }
-
     nav ul li a {
-        display: block;
-        margin: 15px;
-        border-right: 2px solid var(--dark-color);
-        color: var(--text-color);
-        font-size: 15px;
-        padding: 20px 10px;
-    }
-
-    nav ul li a:hover {
-        background: var(--dark-color);
-
-    }
-
-    nav ul li a::after {
-        display: none;
+        font-size: 17px;
+        padding: 0px 15px;
     }
 
     .lang a {
         font-size: 17px;
-        font-weight: 500;
         padding: 0px 6px;
     }
 
@@ -1114,10 +1071,6 @@ form .btn-2 {
     .lang a:hover::after,
     .lang a:focus::after {
         width: 100%;
-    }
-
-    #sidemenu.active {
-        top: 100%;
     }
 
     .sub-title {
@@ -1140,7 +1093,7 @@ form .btn-2 {
 
     .about-col-2 {
         font-size: 14px;
-    }
+    }    
 
     .tab-link {
         margin: 0 10px;
@@ -1159,19 +1112,46 @@ form .btn-2 {
 }
 
 @media (max-width: 800px) {
+    
+    .toggle {
+        display: flex;
+    }    
 
     nav .logo {
-        max-width: 37%;
+        max-width: 38%;
     }
 
-    .lang a {
+    nav ul {
+        position: absolute;
+        top: -300px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--main-color);
+        transition: all .5s;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 15px;
+        border-right: 2px solid var(--dark-color);
+        color: var(--text-color);
         font-size: 15px;
-        padding: 0px 4px;
+        padding: 20px 10px;
     }
 
-    .lang a::after {
-        bottom: -2px;
+    nav ul li a:hover {
+        background: var(--dark-color);
+
     }
+
+    nav ul li a::after {
+        display: none;
+    }    
+
+    #sidemenu.active {
+        top: 100%;
+    }  
 
     .row-header .header-text h1 {
         font-weight: 600;
@@ -1204,12 +1184,26 @@ form .btn-2 {
 
 }
 
-@media (max-width: 540px) {
-
+@media (max-width: 540px) {   
+    
     .lang a {
         font-size: 12px;
-        font-weight: 500;
         padding: 0px 3px;
+    }
+    .sun {
+        width: 20px;
+        height: 20px;
+        top: 4px;
+    }
+    
+    .moon {
+        width: 20px;
+        height: 20px;
+        top: 4px;
+    }
+    .bars {
+        width: 75%;
+        height: 2px;
     }
 
     .row-header .header-text h1 {
@@ -1235,6 +1229,18 @@ form .btn-2 {
 
     .row-header .header-image img {
         width: 285px;
+    }
+
+    .about-col-1 img {
+        width: 250px;
+    }
+
+    .work-list {
+        grid-template-columns:repeat(auto-fill , minmax(260px ,1fr)) ;        
+    }
+
+    .card__content {
+        padding: 2px;
     }
 
 }
