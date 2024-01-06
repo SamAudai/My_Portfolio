@@ -47,8 +47,8 @@ function toggleArabicEnglish(lang) {
 // Call updateContent() on page load
 window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
-    const langData = await fetchLanguageData(userPreferredLanguage);
-    toggleArabicEnglish(userPreferredLanguage);
-    updateContent(langData);
-    toggleArabicStyle(userPreferredLanguage);    
+    const langData = await fetchLanguageData(userPreferredLanguage);    
+    updateContent(langData);    
+    toggleArabicStyle(userPreferredLanguage);
+    toggleArabicEnglish(userPreferredLanguage);    
 });
