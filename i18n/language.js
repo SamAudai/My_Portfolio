@@ -22,9 +22,9 @@ async function fetchLanguageData(lang) {
 async function changeLanguage(lang) {
     setLanguagePreference(lang);    
     const langData = await fetchLanguageData(lang);
-    toggleArabicEnglish(lang);
-    toggleArabicStyle(lang); 
-    updateContent(langData);       
+    updateContent(langData);
+    toggleArabicStyle(lang); // Toggle Arabic stylesheet
+    toggleArabicEnglish(lang)
 }
 
 // Function to toggle Arabic stylesheet based on language selection
@@ -38,9 +38,11 @@ function toggleArabicStyle(lang) {
 function toggleArabicEnglish(lang) {   
     if (lang === 'ar') {
         document.getElementById('en').style.display = "block";
+        document.getElementById('ar').style.display = "none";
     }
     else if(lang === 'en'){
         document.getElementById('ar').style.display = "block";
+        document.getElementById('en').style.display = "none";
     }
 }
 
