@@ -22,9 +22,9 @@ async function fetchLanguageData(lang) {
 async function changeLanguage(lang) {
     setLanguagePreference(lang);    
     const langData = await fetchLanguageData(lang);
-    updateContent(langData);
-    toggleArabicStyle(lang); // Toggle Arabic stylesheet
-    toggleArabicEnglish(lang)
+    toggleArabicEnglish(lang);
+    toggleArabicStyle(lang); 
+    updateContent(langData);       
 }
 
 // Function to toggle Arabic stylesheet based on language selection
@@ -39,7 +39,7 @@ function toggleArabicEnglish(lang) {
     if (lang === 'ar') {
         document.getElementById('en').style.display = "block";
     }
-    if(lang === 'en'){
+    else if(lang === 'en'){
         document.getElementById('ar').style.display = "block";
     }
 }
