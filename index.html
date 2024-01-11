@@ -331,8 +331,9 @@
         <div class="work-list">
             <div class="card">
                 <img src="img/work2.svg" alt="User Management Picture">
+                <p class="card__title" translate="User Management"></p>
                 <div class="card__content">
-                    <p class="card__title" translate="User Management"></p>
+                    <!-- <p class="card__title" translate="User Management"></p> -->
                     <p class="card__description" translate="User Management description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/User_Management.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -346,8 +347,8 @@
             </div>
             <div class="card">
                 <img src="img/work1.svg" alt="Portfolio_A Picture">
-                <div class="card__content">
-                    <p class="card__title" translate="Portfolio Website1"></p>
+                <p class="card__title" translate="Portfolio Website1"></p>
+                <div class="card__content">                    
                     <p class="card__description" translate="Portfolio Website1 description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Audai_Portfolio.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -361,8 +362,8 @@
             </div>
             <div class="card">
                 <img src="img/work7.svg" alt="Portfolio_ASP Picture">
-                <div class="card__content">
-                    <p class="card__title" translate="Portfolio Website2"></p>
+                <p class="card__title" translate="Portfolio Website2"></p>
+                <div class="card__content">                    
                     <p class="card__description" translate="Portfolio Website2 description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/.Net-Core.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -376,8 +377,8 @@
             </div>
             <div class="card">
                 <img src="img/work4.svg" alt="Restaurant_BE Picture">
-                <div class="card__content">
-                    <p class="card__title" translate="Restaurant backend"></p>
+                <p class="card__title" translate="Restaurant backend"></p>
+                <div class="card__content">                    
                     <p class="card__description" translate="Restaurant backend description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Restorant-Server.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -391,8 +392,8 @@
             </div>
             <div class="card">
                 <img src="img/work3.svg" alt="Restaurant_FE Picture">
-                <div class="card__content">
-                    <p class="card__title" translate="Restaurant Frontend"></p>
+                <p class="card__title" translate="Restaurant Frontend"></p>
+                <div class="card__content">                    
                     <p class="card__description" translate="Restaurant Frontend description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Restorant-FrontEnd.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -406,8 +407,8 @@
             </div>
             <div class="card">
                 <img src="img/work5.svg" alt="Geodata Picture">
-                <div class="card__content">
-                    <p class="card__title" translate="Geodata"></p>
+                <p class="card__title" translate="Geodata"></p>
+                <div class="card__content">                    
                     <p class="card__description" translate="Geodata description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Geodata.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -435,9 +436,7 @@
                     <input type="email" name="Email" required>
                     <h4 translate="Your Message"></h4>
                     <textarea name="Message" rows="5"></textarea>
-                    <button id="button" type="submit" class="btn btn-2" onclick="onSubmit()" translate="Send">
-
-                    </button>
+                    <button id="button" type="submit" class="btn btn-2" onclick="onSubmit()" translate="Send"></button>
                     <span id="loader" class="loader"></span>
                     <span id="msg" translate="msg"></span>
                 </form>
@@ -522,12 +521,10 @@
     <section class="copyright">
         <p translate="Implementation"></p>
     </section>
-
+    
+    <script src="i18n/language.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/animated-headline.js"></script>
-    <script src="js/ScrollReveal.js"></script>
-    <script src="i18n/en.json"></script>
-    <script src="i18n/ar.json"></script>
-    <script src="i18n/language.js"></script>
+    <script src="js/ScrollReveal.js"></script>    
     <script src="js/main.js"></script>
 </body>
