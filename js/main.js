@@ -54,8 +54,9 @@ function onSubmit() {
 function scrollToTop() {
     document.documentElement.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: "smooth"     
     })
+    topBtn.href = "#home";
 }
 
 const sr = ScrollReveal({

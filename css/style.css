@@ -56,7 +56,7 @@ section {
 .direction {
     direction: rtl;
     transition: 1s ease-in-out;
-    --en-font: var(--ar-font);
+    font-family: var(--ar-font);
     --direction-icon: 220px;
     --direction-tooltip: 94%;
 }
@@ -125,44 +125,11 @@ nav ul li a:focus::after {
     width: 70%;
 }
 
-.lang a {
-    position: relative;
-    color: var(--text-color);
-    font-size: calc(var(--p-font)*0.8);
-    font-weight: 600;
-    padding: 0px 10px;
-    cursor: pointer;
-}
-#en{
-    display: none;
-}
-#ar{
-    display: none;
-}
-
-.lang a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: var(--main-color);
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    transition: ease .4s;
-}
-
-.lang a:hover::after,
-.lang a:focus::after {
-    width: 100%;
-}
-
 #checkbox1 {
     z-index: 10001;
     cursor: pointer;
     display: none;
 }
-
 .toggle {
     position: relative;
     width: 34px;
@@ -176,61 +143,79 @@ nav ul li a:focus::after {
     gap: 7px;
     transition-duration: .3s;
 }
-
 .bars {
     width: 86%;
     height: 3px;
-    background-color: var(--main-color);
+    background-color: var(--text-color);
     border-radius: 5px;
     transition-duration: .3s;
 }
-
 #checkbox1:checked+.toggle .bars {
     margin-left: 8px;
 }
-
 #checkbox1:checked+.toggle #bar2 {
     transform: rotate(135deg);
     margin-left: 0;
     transform-origin: center;
     transition-duration: .3s;
 }
-
 #checkbox1:checked+.toggle #bar1 {
     transform: rotate(45deg);
     transition-duration: .3s;
     transform-origin: left center;
 }
-
 #checkbox1:checked+.toggle #bar3 {
     transform: rotate(-45deg);
     transition-duration: .3s;
     transform-origin: left center;
 }
 
+.tools{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lang a {
+    position: relative;
+    color: var(--text-color);
+    font-size: calc(var(--p-font)*0.75);
+    font-weight: 600;
+    padding: 0px 20px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+#en{
+    display: none;
+}
+#ar{
+    display: none;
+}
+
+.lang a:hover,
+.lang a:focus {
+    color: var(--main-color);
+}
+
 .sun {
     position: relative;
     fill: var(--text-color);
-    top: 5px;
-    z-index: 1;
+    top: 3px;
     width: 23px;
     height: 23px;
     display: none;
     cursor: pointer;
+    animation: rotate 20s linear infinite;
 }
 
 .moon {
     position: relative;
-    top: 5px;
-    z-index: 1;
+    top: 3px;
     width: 23px;
     height: 23px;
     display: none;
     cursor: pointer;
-}
-
-.sun {
-    animation: rotate 15s linear infinite;
+    animation: tilt 5s linear infinite;
 }
 
 @keyframes rotate {
@@ -243,11 +228,6 @@ nav ul li a:focus::after {
         transform: rotate(360deg);
     }
 }
-
-.moon {
-    animation: tilt 5s linear infinite;
-}
-
 @keyframes tilt {
 
     0% {
@@ -718,7 +698,6 @@ nav ul li a:focus::after {
     margin-top: 40px;
 }
 
-
 .card {
     position: relative;
     width: 100%;
@@ -810,7 +789,6 @@ nav ul li a:focus::after {
     background: linear-gradient(to right, var(--main-color), var(--dark-color));
 }
 
-
 .card__btn svg {
     position: relative;
     transition: transform 0.3s;
@@ -865,8 +843,8 @@ nav ul li a:focus::after {
 }
 
 
-
 /******************CONTACT SECTION STYLE******************************/
+
 .row-contact {
     display: flex;
     justify-content: flex-start;
@@ -898,6 +876,7 @@ nav ul li a:focus::after {
     text-decoration: none;
     transition: .5s;
 }
+
 .contact-left ul li svg {
     transform: translateY(8px);
 }
@@ -1030,8 +1009,7 @@ form .btn-2 {
     position: absolute;
     background: var(--main-color);
     top: 0;
-    left: 0;
-    ;
+    left: 0;    
     width: 0%;
     height: 100%;
     border-radius: 30px;
@@ -1065,8 +1043,8 @@ form .btn-2 {
     }
 
     .lang a {
-        font-size: 17px;
-        padding: 0px 6px;
+        font-size: calc(var(--p-font)*0.8);
+        padding: 0px 10px;
     }
 
     .lang a::after {
@@ -1193,23 +1171,23 @@ form .btn-2 {
 @media (max-width: 540px) {   
     
     .lang a {
-        font-size: 12px;
-        padding: 0px 3px;
+        font-size: calc(var(--p-font)*0.65);
+                
     }
     .sun {
-        width: 20px;
-        height: 20px;
-        top: 4px;
+        width: 18px;
+        height: 18px;
+        animation: none 20s linear infinite;
     }
     
     .moon {
-        width: 20px;
-        height: 20px;
-        top: 4px;
+        width: 18px;
+        height: 18px;
+        animation: none 20s linear infinite;
     }
     .bars {
-        width: 75%;
-        height: 2px;
+        width: 67%;
+        height: 1px;
     }
 
     .row-header .header-text h1 {
