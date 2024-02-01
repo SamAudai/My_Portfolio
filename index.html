@@ -14,22 +14,22 @@
 
     <link rel="icon" type="image/x-icon" href="./img/portfolio.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal&display=swap">
 </head>
 
 <body>
-    <!--HEADER SECTION-->
-    <section id="home">
-        <nav id="navbar">
+    <!--NAVBAR SECTION-->
+    <section id="navbar">
+        <nav>
             <img src="img/logo1.svg" class="logo">
             <ul id="sidemenu">
-                <li><a href="#about" translate="resume"></a></li>
-                <li><a href="#portfolio" translate="portfolio"></a></li>
-                <li><a href="#contact" translate="contact"></a></li>
+                <li><a id="Home" class="section-link" onclick="openSection('home','Home')" translate="home"></a></li>
+                <li><a id="Resume" class="section-link" onclick="openSection('about','Resume')" translate="resume"></a></li>
+                <li><a id="Portfolio" class="section-link" onclick="openSection('portfolio','Portfolio')" translate="portfolio"></a></li>
+                <li><a id="Contact" class="section-link" onclick="openSection('contact','Contact')" translate="contact"></a></li>
             </ul>
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1" class="toggle">
@@ -57,6 +57,9 @@
                 </div>
             </div>
         </nav>
+    </section>
+    <!--HEADER SECTION-->
+    <section id="home" class="section-content">
         <div class="row-header">
             <div class="header-text cd-headline rotate-1">
                 <h4 translate="welcome"></h4>
@@ -76,9 +79,9 @@
             </div>
         </div>
     </section>
-    <hr>
+    
     <!--ABOUT SECTION-->
-    <section id="about">
+    <section id="about" class="section-content">
         <h1 class="sub-title" translate="my resume"></h1>
         <div class="row-about">
             <div class="about-col-1">
@@ -86,9 +89,9 @@
             </div>
             <div class="about-col-2">
                 <div class="tab-title">
-                    <p class="tab-link active-link" onclick="openTab('experience')" translate="Experience"></p>
-                    <p class="tab-link" onclick="openTab('educaion')" translate="Education"></p>
-                    <p class="tab-link" onclick="openTab('skills')" translate="Skills"></p>
+                    <a class="tab-link active-link" onclick="openTab('experience')" translate="Experience"></a>
+                    <a class="tab-link" onclick="openTab('educaion')" translate="Education"></a>
+                    <a class="tab-link" onclick="openTab('skills')" translate="Skills"></a>
                 </div>
                 <div class="tab-content active-tab" id="experience">
                     <ul>
@@ -326,9 +329,9 @@
             </div>
         </div>
     </section>
-    <hr>
+   
     <!--PORTFOLIO SECTION-->
-    <section id="portfolio">
+    <section id="portfolio" class="section-content">
         <h1 class="sub-title" translate="my portfolio"></h1>
         <div class="work-list">
             <div class="card">
@@ -350,7 +353,7 @@
             <div class="card">
                 <img src="img/work1.svg" alt="Portfolio_A Picture">
                 <p class="card__title" translate="Portfolio Website1"></p>
-                <div class="card__content">                    
+                <div class="card__content">
                     <p class="card__description" translate="Portfolio Website1 description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Audai_Portfolio.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -365,7 +368,7 @@
             <div class="card">
                 <img src="img/work7.svg" alt="Portfolio_ASP Picture">
                 <p class="card__title" translate="Portfolio Website2"></p>
-                <div class="card__content">                    
+                <div class="card__content">
                     <p class="card__description" translate="Portfolio Website2 description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/.Net-Core.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -380,7 +383,7 @@
             <div class="card">
                 <img src="img/work4.svg" alt="Restaurant_BE Picture">
                 <p class="card__title" translate="Restaurant backend"></p>
-                <div class="card__content">                    
+                <div class="card__content">
                     <p class="card__description" translate="Restaurant backend description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Restorant-Server.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -395,7 +398,7 @@
             <div class="card">
                 <img src="img/work3.svg" alt="Restaurant_FE Picture">
                 <p class="card__title" translate="Restaurant Frontend"></p>
-                <div class="card__content">                    
+                <div class="card__content">
                     <p class="card__description" translate="Restaurant Frontend description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Restorant-FrontEnd.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -410,7 +413,7 @@
             <div class="card">
                 <img src="img/work5.svg" alt="Geodata Picture">
                 <p class="card__title" translate="Geodata"></p>
-                <div class="card__content">                    
+                <div class="card__content">
                     <p class="card__description" translate="Geodata description"></p>
                     <a class="card__btn" href="https://github.com/SamAudai/Geodata.git" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15">
@@ -425,34 +428,34 @@
         </div>
         <a class="btn" href="https://github.com/SamAudai?tab=repositories" target="_blank" translate="see more"></a>
     </section>
-    <hr>
+    
     <!--CONTACT SECTION-->
-    <section id="contact">
+    <section id="contact" class="section-content">
         <h1 class="sub-title" translate="contact me"></h1>
         <div class="row-contact">
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
+                <form name="form-submit">
                     <h4 translate="Your Name"></h4>
                     <input type="text" name="Name" required>
                     <h4 translate="Your Email"></h4>
                     <input type="email" name="Email" required>
                     <h4 translate="Your Message"></h4>
                     <textarea name="Message" rows="5"></textarea>
-                    <button id="button" type="submit" class="btn btn-2" onclick="onSubmit()" translate="Send"></button>
+                    <button id="button" type="submit" class="btn btn-2" translate="Send"></button>
                     <span id="loader" class="loader"></span>
                     <span id="msg" translate="msg"></span>
                 </form>
-                <a onclick="scrollToTop()" id="topBtn">
-                    <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                    fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z">
-                    </path>
-                    <path fill-rule="evenodd"
-                        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg>
-                </a>
+              <!--   <a onclick="scrollToTop()" id="topBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z">
+                        </path>
+                        <path fill-rule="evenodd"
+                            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
+                        </path>
+                    </svg>
+                </a> -->
             </div>
             <div class="contact-left">
                 <ul>
@@ -484,7 +487,9 @@
                                     d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
                                 </path>
                             </svg>
+                            <div class="social-tooltip">Facebook</div>
                         </a>
+
                     </li>
                     <li class="social-link">
                         <a href="https://www.linkedin.com/in/audai-alsharani-100738211/" target="_blank">
@@ -495,6 +500,7 @@
                                 </path>
                             </svg>
                         </a>
+                        <div class="social-tooltip">Linkedin</div>
                     </li>
                     <li class="social-link">
                         <a href="https://t.me/Audai_Alsharani" target="_blank">
@@ -505,6 +511,7 @@
                                 </path>
                             </svg>
                         </a>
+                        <div class="social-tooltip">Telegram</div>
                     </li>
                     <li class="social-link">
                         <a href="https://wa.link/tl01y5" target="_blank">
@@ -515,6 +522,7 @@
                                 </path>
                             </svg>
                         </a>
+                        <div class="social-tooltip">WhatsApp</div>
                     </li>
                 </ul>
             </div>
@@ -525,10 +533,10 @@
     <section class="copyright">
         <p translate="Implementation"></p>
     </section>
-    
+
     <script src="i18n/language.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/animated-headline.js"></script>
-    <script src="js/ScrollReveal.js"></script>    
+    <script src="js/ScrollReveal.js"></script>
     <script src="js/main.js"></script>
 </body>

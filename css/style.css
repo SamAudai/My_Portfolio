@@ -3,7 +3,7 @@
     --main-color: #ED0A3F;
     --dark-color: hsl(200, 65%, 8%);
     --text-color: #fff;
-    --light-color: hsl(200, 75%, 65%);
+    --light-color: hsl(200, 53%, 74%);
 
     --big-font: 4rem;
     --h1-font: 3.3rem;
@@ -29,7 +29,7 @@
 body {
     background: var(--dark-color);
     color: var(--text-color);
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     font-family: var(--en-font);
 }
 
@@ -42,20 +42,24 @@ body {
 
 section {
     width: 100%;
-    height: 100%;
-    padding: 100px 10%;
+    padding: 3% 10%;
 }
-
+section.section-content {
+    display: none;
+}
+section.section-content.active-section {
+    display: block;
+}
 
 .light {
     --dark-color: var(--light-color);
     --text-color: #0f0f0f;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .direction {
     direction: rtl;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     font-family: var(--ar-font);
     --direction-icon: 220px;
     --direction-tooltip: 94%;
@@ -98,31 +102,31 @@ nav ul li {
 }
 
 nav ul li a {
+    position: relative;
     text-decoration: none !important;
     text-transform: capitalize;
     color: var(--text-color);
     font-size: calc(var(--p-font)-0.2);
-    padding: 0px 25px;
+    padding: 0px 20px;
     font-weight: 600;
     cursor: pointer;
 }
 
 nav ul li a::after {
     content: '';
-    position: absolute;
+    position: absolute;    
     width: 0;
     height: 2px;
-    margin: 0px 18px;
+    margin: 0px;
     background: var(--main-color);
-    bottom: -3px;
+    bottom: -5px;
     left: 0;
-    right: 1px;
-    transition: ease .4s;
+    right: 0;
+    transition: ease-in-out .1s;
 }
 
-nav ul li a:hover::after,
-nav ul li a:focus::after {
-    width: 70%;
+nav ul li a.active-link::after {
+    width: 100%;
 }
 
 #checkbox1 {
@@ -130,6 +134,7 @@ nav ul li a:focus::after {
     cursor: pointer;
     display: none;
 }
+
 .toggle {
     position: relative;
     width: 34px;
@@ -143,6 +148,7 @@ nav ul li a:focus::after {
     gap: 7px;
     transition-duration: .3s;
 }
+
 .bars {
     width: 86%;
     height: 3px;
@@ -150,27 +156,31 @@ nav ul li a:focus::after {
     border-radius: 5px;
     transition-duration: .3s;
 }
+
 #checkbox1:checked+.toggle .bars {
     margin-left: 8px;
 }
+
 #checkbox1:checked+.toggle #bar2 {
     transform: rotate(135deg);
     margin-left: 0;
     transform-origin: center;
     transition-duration: .3s;
 }
+
 #checkbox1:checked+.toggle #bar1 {
     transform: rotate(45deg);
     transition-duration: .3s;
     transform-origin: left center;
 }
+
 #checkbox1:checked+.toggle #bar3 {
     transform: rotate(-45deg);
     transition-duration: .3s;
     transform-origin: left center;
 }
 
-.tools{
+.tools {
     display: flex;
     align-items: center;
     position: relative;
@@ -185,10 +195,12 @@ nav ul li a:focus::after {
     cursor: pointer;
     transition-duration: .5s;
 }
-#en{
+
+#en {
     display: none;
 }
-#ar{
+
+#ar {
     display: none;
 }
 
@@ -228,6 +240,7 @@ nav ul li a:focus::after {
         transform: rotate(360deg);
     }
 }
+
 @keyframes tilt {
 
     0% {
@@ -247,12 +260,13 @@ nav ul li a:focus::after {
     }
 }
 
+/********************************HOME SECTION STYLE*****************************/
+
 .row-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 6%;
 }
 
 .row-header .header-text {
@@ -567,6 +581,14 @@ nav ul li a:focus::after {
     width: 100%;
 }
 
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-tab {
+    display: block;
+}
+
 .tab-content ul li {
     list-style: none;
     margin: 10px 0 25px 0;
@@ -600,14 +622,6 @@ nav ul li a:focus::after {
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active-tab {
-    display: block;
 }
 
 .skill-bar {
@@ -693,7 +707,7 @@ nav ul li a:focus::after {
 
 .work-list {
     display: grid;
-    grid-template-columns:repeat(auto-fit , minmax(282px ,1fr)) ;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
     grid-gap: 40px;
     margin-top: 40px;
 }
@@ -723,15 +737,15 @@ nav ul li a:focus::after {
 
 .card__title {
     position: absolute;
-    top: 10%;      
+    top: 10%;
     font-size: 25px;
     width: 90%;
     height: 25%;
     margin: 10px;
     font-weight: 500;
     transform: translate(var(--x-style), -50%);
-    background-color: transparent;    
-    color: var(--text-color);    
+    background-color: transparent;
+    color: var(--text-color);
     padding: 10px;
 }
 
@@ -865,8 +879,8 @@ nav ul li a:focus::after {
 }
 
 
-.contact-left ul li{
-    position: relative;    
+.contact-left ul li {
+    position: relative;
     margin: 20px;
 }
 
@@ -895,25 +909,21 @@ nav ul li a:focus::after {
     transform: scale(1.1);
 }
 
-.contact-left .social .social-link:hover {
-    animation: bounce 0.4s linear;
+.contact-left .social .social-link .social-tooltip {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    padding: 6px 0;
+    opacity: 0;
+    font-size: 12px;
+    transition: all 0.3s ease-out;
 }
-@keyframes bounce {
-    40% {
-        transform: scale(1.4);
-    }
 
-    60% {
-        transform: scale(0.8);
-    }
-
-    80% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.contact-left .social .social-link:hover .social-tooltip {
+    opacity: 1;
+    top: 28px;
 }
 
 .contact-right form {
@@ -959,17 +969,6 @@ form .btn-2 {
     background-color: #ffffff;
 }
 
-.copyright {
-    width: 100%;
-    text-align: center;
-    text-transform: capitalize;
-    padding: 25px 0;
-    background: var(--dark-color);
-    color: var(--text-color);
-    font-weight: 300;
-    margin-top: 0px;
-}
-
 .contact-right svg {
     position: fixed;
     bottom: 5rem;
@@ -992,7 +991,7 @@ form .btn-2 {
 #msg {
     position: absolute;
     color: #11ad11;
-    display: none;    
+    display: none;
 }
 
 .loader {
@@ -1004,17 +1003,19 @@ form .btn-2 {
     background-color: var(--text-color);
     position: absolute;
 }
+
 .loader::before {
     content: "";
     position: absolute;
     background: var(--main-color);
     top: 0;
-    left: 0;    
+    left: 0;
     width: 0%;
     height: 100%;
     border-radius: 30px;
     animation: moving 1s ease-in-out infinite;
 }
+
 @keyframes moving {
     50% {
         width: 100%;
@@ -1027,14 +1028,26 @@ form .btn-2 {
     }
 }
 
+.copyright {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 25px 0;
+    color: var(--text-color);
+    font-weight: 300;
+    margin-top: 0px;
+    background: var(--dark-color);
+}
+
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/
 
 
 @media (max-width: 970px) {
 
-    .row-header {
-        margin-top: 12%;
+    section {
+        padding-top: 10%;
     }
 
     nav ul li a {
@@ -1077,7 +1090,7 @@ form .btn-2 {
 
     .about-col-2 {
         font-size: 14px;
-    }    
+    }
 
     .tab-link {
         margin: 0 10px;
@@ -1096,10 +1109,10 @@ form .btn-2 {
 }
 
 @media (max-width: 800px) {
-    
+
     .toggle {
         display: flex;
-    }    
+    }
 
     nav .logo {
         max-width: 40%;
@@ -1107,12 +1120,12 @@ form .btn-2 {
 
     nav ul {
         position: absolute;
-        top: -300px;
+        top: -500px;
         left: 0;
         right: 0;
         flex-direction: column;
         background-color: var(--main-color);
-        transition: all .5s;
+        transition: ease-in-out .5s;
     }
 
     nav ul li a {
@@ -1131,11 +1144,11 @@ form .btn-2 {
 
     nav ul li a::after {
         display: none;
-    }    
+    }
 
     #sidemenu.active {
         top: 100%;
-    }  
+    }
 
     .row-header .header-text h1 {
         font-weight: 600;
@@ -1168,23 +1181,23 @@ form .btn-2 {
 
 }
 
-@media (max-width: 540px) {   
-    
+@media (max-width: 540px) {
+
     .lang a {
         font-size: calc(var(--p-font)*0.65);
-                
+
     }
+
     .sun {
-        width: 18px;
-        height: 18px;
-        animation: none 20s linear infinite;
+        width: 19px;
+        height: 19px;
     }
-    
+
     .moon {
-        width: 18px;
-        height: 18px;
-        animation: none 20s linear infinite;
+        width: 19px;
+        height: 19px;
     }
+
     .bars {
         width: 67%;
         height: 1px;
@@ -1220,7 +1233,7 @@ form .btn-2 {
     }
 
     .work-list {
-        grid-template-columns:repeat(auto-fill , minmax(260px ,1fr)) ;        
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
 
     .card__content {
