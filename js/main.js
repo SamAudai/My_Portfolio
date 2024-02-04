@@ -95,7 +95,7 @@ window.onload = () => {
     } else {
         sun.style.display = localStorage.getItem('icon') || 'inline-flex';
     }
-};
+}
 
 /* function scrollToTop() {
     document.documentElement.scrollTo({

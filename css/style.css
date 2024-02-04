@@ -5,14 +5,16 @@
     --text-color: #fff;
     --light-color: hsl(200, 53%, 74%);
 
-    --big-font: 4rem;
+    --big-font: 3.8rem;
     --h1-font: 3.3rem;
     --h2-font: 2.8rem;
     --h3-font: 1.5rem;
     --p-font: 1.1rem;
-
-    --direction-icon: 5px;
-    --direction-tooltip: -20px;
+    
+    --direction-tooltip-right: -20px;
+    --direction-tooltip-left: auto;
+    --direction-margin-right: 50px;
+    --direction-margin-left: 0px;
 
     --ar-font: 'Tajawal', sans-serif;
     --en-font: 'Poppins', sans-serif;
@@ -44,9 +46,11 @@ section {
     width: 100%;
     padding: 3% 10%;
 }
+
 section.section-content {
     display: none;
 }
+
 section.section-content.active-section {
     display: block;
 }
@@ -57,12 +61,14 @@ section.section-content.active-section {
     transition: .5s ease-in-out;
 }
 
-.direction {
+.arabic {
     direction: rtl;
     transition: .5s ease-in-out;
-    font-family: var(--ar-font);
-    --direction-icon: 220px;
-    --direction-tooltip: 94%;
+    font-family: var(--ar-font);   
+    --direction-tooltip-right: auto;
+    --direction-tooltip-left: -20px;
+    --direction-margin-right: 0px;
+    --direction-margin-left: 50px;
 }
 
 /********************************HEADER SECTION STYLE*****************************/
@@ -78,11 +84,11 @@ nav {
     justify-content: space-between;
     background: var(--dark-color);
     box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        inset -1px -4px 6px -1px rgba(255, 255, 255, 0.7),
         -0.5px -0.5px 0px rgba(255, 255, 255, 1),
         0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    
     padding: 15px 10%;
     transition: .3s;
 }
@@ -107,14 +113,14 @@ nav ul li a {
     text-transform: capitalize;
     color: var(--text-color);
     font-size: calc(var(--p-font)-0.2);
-    padding: 0px 20px;
+    padding: 0px 25px;
     font-weight: 600;
     cursor: pointer;
 }
 
 nav ul li a::after {
     content: '';
-    position: absolute;    
+    position: absolute;
     width: 0;
     height: 2px;
     margin: 0px;
@@ -267,6 +273,7 @@ nav ul li a.active-link::after {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .row-header .header-text {
@@ -535,7 +542,6 @@ nav ul li a.active-link::after {
     margin-top: 20px;
 }
 
-
 .about-col-1 {
     display: block;
     flex-basis: 40%;
@@ -558,7 +564,8 @@ nav ul li a.active-link::after {
 }
 
 .tab-link {
-    margin-right: 50px;
+    margin-right: var(--direction-margin-right);
+    margin-left: var(--direction-margin-left);
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
@@ -653,11 +660,11 @@ nav ul li a.active-link::after {
 }
 
 .javascript .skill-percentage {
-    width: 75%;
+    width: 85%;
 }
 
 .angular .skill-percentage {
-    width: 80%;
+    width: 85%;
 }
 
 .netcore .skill-percentage {
@@ -665,15 +672,15 @@ nav ul li a.active-link::after {
 }
 
 .java-c .skill-percentage {
-    width: 65%;
-}
-
-.cc .skill-percentage {
     width: 75%;
 }
 
+.cc .skill-percentage {
+    width: 80%;
+}
+
 .nodejs .skill-percentage {
-    width: 70%;
+    width: 75%;
 }
 
 .tooltip {
@@ -687,7 +694,8 @@ nav ul li a.active-link::after {
     padding: .4em;
     font-size: .9rem;
     position: absolute;
-    right: var(--direction-tooltip);
+    right: var(--direction-tooltip-right);
+    left: var(--direction-tooltip-left);
     bottom: 17px;
 }
 
@@ -700,10 +708,6 @@ nav ul li a.active-link::after {
 }
 
 /******************PORTFOLIO SECTION STYLE******************************/
-
-.title {
-    color: var(--text-color);
-}
 
 .work-list {
     display: grid;
@@ -743,7 +747,6 @@ nav ul li a.active-link::after {
     height: 25%;
     margin: 10px;
     font-weight: 500;
-    transform: translate(var(--x-style), -50%);
     background-color: transparent;
     color: var(--text-color);
     padding: 10px;
@@ -969,7 +972,7 @@ form .btn-2 {
     background-color: #ffffff;
 }
 
-.contact-right svg {
+/* .contact-right svg {
     position: fixed;
     bottom: 5rem;
     right: .2rem;
@@ -986,7 +989,7 @@ form .btn-2 {
     100% {
         transform: translateY(-15px);
     }
-}
+} */
 
 #msg {
     position: absolute;
@@ -1015,7 +1018,6 @@ form .btn-2 {
     border-radius: 30px;
     animation: moving 1s ease-in-out infinite;
 }
-
 @keyframes moving {
     50% {
         width: 100%;
@@ -1036,8 +1038,13 @@ form .btn-2 {
     padding: 25px 0;
     color: var(--text-color);
     font-weight: 300;
-    margin-top: 0px;
     background: var(--dark-color);
+    box-shadow: inset 4px 4px 6px -1px rgba(26, 25, 25, 0.2),
+        inset -1px 4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    
 }
 
 /*******************************Responsive Design**************************************/

@@ -30,7 +30,7 @@ async function changeLanguage(lang) {
 // Function to toggle Arabic stylesheet based on language selection
 function toggleArabicStyle(lang) {   
     if (lang === 'ar') {
-        document.body.classList.add('direction');
+        document.body.classList.add('arabic');
     }
 }
 
