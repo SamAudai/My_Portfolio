@@ -30,7 +30,10 @@ function openSection(sectionName, link) {
     document.getElementById(link).classList.add('active-link');
     document.getElementById(sectionName).classList.add('active-section');
     localStorage.setItem("section", sectionName);
-    localStorage.setItem("link", link);      
+    localStorage.setItem("link", link);
+ 
+    const animation = document.getElementById(sectionName).animate(keyframes_sections, options);    
+    animation.play();
 }
 
 function openTab(tabName) {
@@ -43,6 +46,9 @@ function openTab(tabName) {
 
     this.event.currentTarget.classList.add('active-link');
     document.getElementById(tabName).classList.add('active-tab');
+
+    const animation = document.getElementById(tabName).animate(keyframes_tabs, options);    
+    animation.play();
 }
 
 menu.onclick = () => {
@@ -73,7 +79,7 @@ function setThemeMode() {
     if (document.body.classList.contains('light')) {
         document.body.classList.remove('light');
         moon.style.display = "none";
-        sun.style.display = "inline-flex";        
+        sun.style.display = "inline-flex";
         localStorage.setItem('icon', "inline-flex")
         localStorage.setItem('theme', 'body');
     } else {
@@ -86,10 +92,10 @@ function setThemeMode() {
 }
 
 window.onload = () => {
-    document.getElementById(localStorage.getItem("link")||'Home').classList.add('active-link');    
-    document.getElementById(localStorage.getItem("section")||'home').classList.add('active-section');
+    document.getElementById(localStorage.getItem("link") || 'Home').classList.add('active-link');
+    document.getElementById(localStorage.getItem("section") || 'home').classList.add('active-section');
     
-    document.body.classList.add(localStorage.getItem("theme")||'body');
+    document.body.classList.add(localStorage.getItem("theme") || 'body');
     if (localStorage.getItem('theme') == 'light') {
         moon.style.display = localStorage.getItem('icon') || 'inline-flex';
     } else {
@@ -105,14 +111,6 @@ window.onload = () => {
     topBtn.onclick=openSection(home);
 }  */
 
-/* const sr = ScrollReveal({
-    distance: '50px',
-    duration: 2700,
-    reset: false
-});
-sr.reveal('#home', { delay: 200, origin: 'top' });
-sr.reveal('#portfolio', { delay: 200, origin: 'right' }) */;
-
 /* window.onscroll = () => {
     if (window.scrollY > 150) {
         topBtn.style.visibility = "visible";
@@ -121,3 +119,19 @@ sr.reveal('#portfolio', { delay: 200, origin: 'right' }) */;
         topBtn.style.visibility = "hidden";
     }
 }; */
+
+// Define the animations
+const keyframes_sections = [
+    { transform: 'translateY(-100px)', opacity: 0 },
+    { transform: 'translateY(0px)', opacity: 1 }
+];
+const keyframes_tabs = [
+    { transform: 'scale(1.0)', opacity: 0 },
+    { transform: 'scale(1.0)', opacity: 1 }
+];
+const options = {
+    duration: 700,
+    easing: 'ease-in-out',
+    fill: 'forwards' // Keeps the final state after the animation
+};
+

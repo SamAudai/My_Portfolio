@@ -1032,7 +1032,6 @@ form .btn-2 {
 
 .copyright {
     position: relative;
-    width: 100%;
     text-align: center;
     text-transform: capitalize;
     padding: 25px 0;
@@ -1049,18 +1048,55 @@ form .btn-2 {
 
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/
+@media (max-width: 1300px) {
 
+    section {
+        padding: 7%;       
+    }
+    section#home {
+        height: 100vh;
+    }
+}
 
 @media (max-width: 970px) {
 
     section {
-        padding-top: 10%;
+        padding: 10%;
     }
 
-    nav ul li a {
-        font-size: 17px;
-        padding: 0px 15px;
+    #sidemenu.active {
+        top: 100%;
     }
+
+    .toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--main-color);
+        transition: ease-in-out .5s;
+    }
+    nav ul li a {
+        display: block;
+        margin: 30px;
+        border-right: 2px solid var(--dark-color);
+        color: var(--text-color);
+        font-size: 17px;
+        padding: 15px ;
+    }
+    nav ul li a:hover {
+        background: var(--dark-color);
+
+    }
+
+    nav ul li a::after {
+        display: none;
+    } 
 
     .lang a {
         font-size: calc(var(--p-font)*0.8);
@@ -1115,47 +1151,17 @@ form .btn-2 {
     }
 }
 
-@media (max-width: 800px) {
-
-    .toggle {
-        display: flex;
-    }
+@media (max-width: 800px) {   
 
     nav .logo {
         max-width: 40%;
-    }
-
-    nav ul {
-        position: absolute;
-        top: -500px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--main-color);
-        transition: ease-in-out .5s;
-    }
+    }    
 
     nav ul li a {
-        display: block;
-        margin: 15px;
-        border-right: 2px solid var(--dark-color);
-        color: var(--text-color);
-        font-size: 15px;
-        padding: 20px 10px;
-    }
-
-    nav ul li a:hover {
-        background: var(--dark-color);
-
-    }
-
-    nav ul li a::after {
-        display: none;
-    }
-
-    #sidemenu.active {
-        top: 100%;
-    }
+        margin: 8px;
+        font-size: 12px;
+        padding: 5px;
+    }   
 
     .row-header .header-text h1 {
         font-weight: 600;
@@ -1245,6 +1251,11 @@ form .btn-2 {
 
     .card__content {
         padding: 2px;
+    }
+
+    section.copyright {
+        padding: 20px 0;
+        font-size: 13px;
     }
 
 }
