@@ -1048,15 +1048,6 @@ form .btn-2 {
 
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/
-@media (max-width: 1300px) {
-
-    section {
-        padding: 7%;       
-    }
-    section#home {
-        height: 100vh;
-    }
-}
 
 @media (max-width: 970px) {
 
