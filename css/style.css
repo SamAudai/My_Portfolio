@@ -211,8 +211,7 @@ nav ul li a.active-link::after {
 .lang a {
     position: relative;
     color: var(--text-color);
-    font-size: calc(var(--p-font)*0.75);
-    font-weight: 600;
+    font-size: calc(var(--p-font)*0.75);    
     padding: 0px 20px;
     cursor: pointer;
     transition-duration: .5s;
@@ -1042,7 +1041,6 @@ form .btn-2 {
     50% {
         width: 100%;
     }
-
     100% {
         width: 0;
         right: 0;
@@ -1067,14 +1065,18 @@ form .btn-2 {
 @media (max-width: 1280px) {
 
     section {
-        padding: 5%;
+        padding: 5% 10%;
+    }
+
+    .row-header .header-image img {
+        width: 310px;
     }
 }
 
 @media (max-width: 970px) {
 
     section {
-        padding: 13% 10%;
+        padding: 8% 10%;
     }
 
     #sidemenu.active {
@@ -1114,18 +1116,7 @@ form .btn-2 {
     }
 
     .lang a {
-        font-size: calc(var(--p-font)*0.8);
         padding: 0px 10px;
-    }
-
-    .lang a::after {
-        margin: 0px;
-        bottom: -3px;
-    }
-
-    .lang a:hover::after,
-    .lang a:focus::after {
-        width: 100%;
     }
 
     .sub-title {
@@ -1135,6 +1126,23 @@ form .btn-2 {
 
     .row-about {
         justify-content: flex-start;
+    }
+    .row-header .header-text h1 {
+        font-weight: 600;
+        font-size: 45px;
+    }
+
+    .row-header .header-text h4 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .row-header .header-text span.slogen p {
+        font-size: 15px;
+    }
+
+    .row-header .header-image img {
+        width: 300px;
     }
 
     .about-col-1,
@@ -1167,7 +1175,7 @@ form .btn-2 {
 }
 
 @media (max-width: 800px) {
-
+   
     nav .logo {
         max-width: 40%;
     }
@@ -1181,7 +1189,6 @@ form .btn-2 {
     .row-header .header-text h1 {
         font-weight: 600;
         font-size: 40px;
-        margin-bottom: 15px;
     }
 
     .row-header .header-text h4 {
@@ -1191,11 +1198,10 @@ form .btn-2 {
 
     .row-header .header-text span.slogen p {
         font-size: 17px;
-        margin-bottom: 9px;
     }
 
     .row-header .header-image img {
-        width: 335px;
+        width: 290px;
     }
 
     .about-col-1 {
@@ -1210,7 +1216,7 @@ form .btn-2 {
 }
 
 @media (max-width: 540px) {
-
+    
     .lang a {
         font-size: calc(var(--p-font)*0.65);
 
@@ -1253,7 +1259,7 @@ form .btn-2 {
     }
 
     .row-header .header-image img {
-        width: 285px;
+        width: 275px;
     }
 
     .about-col-1 img {
