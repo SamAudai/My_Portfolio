@@ -89,6 +89,7 @@ section.section-content.active-section {
     --direction-tooltip-left: -20px;
     --direction-margin-right: 0px;
     --direction-margin-left: 50px;
+    --h1-font: 3rem;
 }
 
 /********************************HEADER SECTION STYLE*****************************/
