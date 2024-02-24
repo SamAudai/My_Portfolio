@@ -11,23 +11,29 @@
     <meta name="author" content="Audai Salman Alsharani">
 
     <title translate="title"></title>
-    
+
     <link rel="icon" type="image/x-icon" href="./img/portfolio.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body>
+<header>
     <!--NAVBAR SECTION-->
-    <section id="navbar">
+    <div id="navbar">
         <nav>
-            <img src="img/logo1.svg" class="logo">
+            <img id="logo" src="img/logo3.svg" class="logo" alt="logo image">
             <ul id="sidemenu">
-                <li><a id="Home" class="section-link" onclick="openSection('home','Home')" translate="home"></a></li>
-                <li><a id="Resume" class="section-link" onclick="openSection('about','Resume')" translate="resume"></a></li>
-                <li><a id="Portfolio" class="section-link" onclick="openSection('portfolio','Portfolio')" translate="portfolio"></a></li>
-                <li><a id="Contact" class="section-link" onclick="openSection('contact','Contact')" translate="contact"></a></li>
+                <li id="Home" class="section-link" onclick="openSection('home','Home')" translate="home"></li>
+                <li id="Resume" class="section-link" onclick="openSection('about','Resume')" translate="resume"></li>
+                <li id="Portfolio" class="section-link" onclick="openSection('portfolio','Portfolio')"
+                    translate="portfolio"></li>
+                <li id="Contact" class="section-link" onclick="openSection('contact','Contact')" translate="contact">
+                </li>
             </ul>
             <input type="checkbox" id="checkbox1">
             <label for="checkbox1" class="toggle">
@@ -50,23 +56,25 @@
                     </svg>
                 </div>
                 <div class="lang">
-                    <a id="en" onclick="changeLanguage('en')" translate="English"></a>
-                    <a id="ar" onclick="changeLanguage('ar')" translate="Arabic"></a>
+                    <span id="en" onclick="changeLanguage('en')" translate="English"></span>
+                    <span id="ar" onclick="changeLanguage('ar')" translate="Arabic"></span>
                 </div>
             </div>
         </nav>
-    </section>
-    
+    </div>
+</header>
+
+<body>
     <!--HEADER SECTION-->
     <section id="home" class="section-content">
         <div class="row-header">
             <div class="header-text cd-headline rotate-1">
                 <h4 translate="welcome"></h4>
                 <h1 translate="name"></h1>
-                <span class="words cd-words-wrapper">
-                    <b class="is-visible" translate="job1"></b>
-                    <b translate="job2"></b>
-                    <b translate="job3"></b>
+                <span class="animated-info">
+                    <b class="animated-item" translate="job1"></b>
+                    <b class="animated-item" translate="job2"></b>
+                    <b class="animated-item" translate="job3"></b>
                 </span>
                 <span class="slogen">
                     <p translate="slogen1"></p>
@@ -74,71 +82,85 @@
                 </span>
             </div>
             <div class="header-image">
-                <img src="img/Software engineer-amico.svg" alt="svg image">
+                <img src="img/logo_1.svg" alt="svg image">
             </div>
         </div>
     </section>
-    
+
     <!--ABOUT SECTION-->
     <section id="about" class="section-content">
         <h1 class="sub-title" translate="my resume"></h1>
         <div class="row-about">
             <div class="about-col-1">
-                <img src="img/20200810_092747499_iOS.jpg" alt="">
+                <img src="img/20200810_092747499_iOS.webp" alt="personal image">
             </div>
             <div class="about-col-2">
                 <div class="tab-title">
-                    <a class="tab-link active-link" onclick="openTab('experience')" translate="Experience"></a>
-                    <a class="tab-link" onclick="openTab('educaion')" translate="Education"></a>
-                    <a class="tab-link" onclick="openTab('skills')" translate="Skills"></a>
+                    <span class="tab-link active-link" onclick="openTab('experience')" translate="Experience"></span>
+                    <span class="tab-link" onclick="openTab('educaion')" translate="Education"></span>
+                    <span class="tab-link" onclick="openTab('skills')" translate="Skills"></span>
                 </div>
                 <div class="tab-content active-tab" id="experience">
                     <ul>
-                        <li>
-                            <p class="date">1/2023 - 6/2023</p>
-                            <p class="work" translate="work1"></p>
-                            <p class="place" translate="place1"></p>
-                            <p class="task" translate="task1"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2023</span></div>
+                            <div class="timeline-info">
+                                <p class="work" translate="work1"></p>
+                                <p class="place" translate="place1"></p>
+                                <p class="task" translate="task1"></p>
+                            </div>
                         </li>
-                        <li>
-                            <p id="date">1/2023 - 6/2023</p>
-                            <p class="work" translate="work2"></p>
-                            <p class="place" translate="place2"></p>
-                            <p class="task" translate="task2"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2023</span></div>
+                            <div class="timeline-info">
+                                <p class="work" translate="work2"></p>
+                                <p class="place" translate="place2"></p>
+                                <p class="task" translate="task2"></p>
+                            </div>
                         </li>
-                        <li>
-                            <p id="date">2/2023 - 3/2023</p>
-                            <p class="work" translate="work3"></p>
-                            <p class="place" translate="place3"></p>
-                            <p class="task" translate="task3"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2022</span></div>
+                            <div class="timeline-info">
+                                <p class="work" translate="work3"></p>
+                                <p class="place" translate="place3"></p>
+                                <p class="task" translate="task3"></p>
+                            </div>
                         </li>
-                        <li>
-                            <p id="date">2017 - Present</p>
-                            <p class="work" translate="work4"></p>
-                            <p class="place" translate="place4"></p>
-                            <p class="task" translate="task4"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2017</span></div>
+                            <div class="timeline-info">
+                                <p class="work" translate="work4"></p>
+                                <p class="place" translate="place4"></p>
+                                <p class="task" translate="task4"></p>
+                            </div>
                         </li>
-                        <li>
-                            <p id="date">2015 - Persent</p>
-                            <p class="work" translate="work5"></p>
-                            <p class="place" translate="place5"></p>
-                            <p class="task" translate="task5"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2015</span></div>
+                            <div class="timeline-info">
+                                <p class="work" translate="work5"></p>
+                                <p class="place" translate="place5"></p>
+                                <p class="task" translate="task5"></p>
+                            </div>
                         </li>
                     </ul>
                 </div>
                 <div class="tab-content" id="educaion">
                     <ul>
-                        <li>
-                            <p class="date">2014 - 2019</p>
-                            <p class="work" translate="University1"></p>
-                            <p class="place" translate="Certificate1"></p>
-                            <p class="task" translate="Specialization1"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2014</span></div>
+                            <div class="timeline-info">
+                                <p class="place" translate="Certificate1"></p>
+                                <p class="task" translate="Specialization1"></p>
+                                <p class="work" translate="University1"></p>
+                            </div>
                         </li>
-                        <li>
-                            <p class="date">2004 - 2006</p>
-                            <p class="work" translate="University2"></p>
-                            <p class="place" translate="Certificate2"></p>
-                            <p class="task" translate="Specialization2"></p>
+                        <li class="timeline-wrapper">
+                            <div class="date timeline-yr"><span>2006</span></div>
+                            <div class="timeline-info">
+                                <p class="place" translate="Certificate2"></p>
+                                <p class="task" translate="Specialization2"></p>
+                                <p class="work" translate="University2"></p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -199,7 +221,7 @@
                                     </g>
                                 </svg>&nbsp;
                                 <svg style="color: rgb(67, 9, 160);" width="30" height="30" role="img"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                    
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M23.8337 8.1013a13.9123 13.9123 0 0 1-13.6424 11.72 10.1053 10.1053 0 0 1-1.994-.121 6.111 6.111 0 0 1-5.0824-5.7607 5.9344 5.9344 0 0 1 11.867-.0838c.025.9835-.4011 1.8464-1.277 1.8713-.9356 0-1.3742-.6677-1.3742-1.5674v-2.5001a1.5313 1.5313 0 0 0-1.5196-1.5328H8.7152a3.6481 3.6481 0 1 0 2.6948 6.0794l.0733-.1093.0734.1213a2.5807 2.5807 0 0 0 2.2007 1.0479 2.9088 2.9088 0 0 0 2.6947-3.0406 7.912 7.912 0 0 0-.217-1.9324 7.4043 7.4043 0 0 0-14.6395 1.6033 7.4971 7.4971 0 0 0 7.307 7.4043s.549.05 1.1677.0357a15.8029 15.8029 0 0 0 8.4747-2.5283c.036-.025.0719.025.048.0614a12.4392 12.4392 0 0 1-9.6901 3.9625A8.7442 8.7442 0 0 1 .003 13.8603a9.049 9.049 0 0 1 3.6349-7.2471 8.8634 8.8634 0 0 1 5.229-1.7262h2.813a7.9145 7.9145 0 0 0 5.8386-2.5777.1093.1093 0 0 1 .0594-.034.1115.1115 0 0 1 .1195.0522.113.113 0 0 1 .0155.0672 7.9345 7.9345 0 0 1-1.2274 3.5493.1075.1075 0 0 0-.0132.0609.1098.1098 0 0 0 .0724.0945.109.109 0 0 0 .0619.0033 8.5054 8.5054 0 0 0 5.9134-4.876.1554.1554 0 0 1 .0546-.0527.1497.1497 0 0 1 .147 0 .1535.1535 0 0 1 .0546.0527 10.779 10.779 0 0 1 1.0575 6.8746zm-14.9383 3.527a2.188 2.188 0 1 0 2.1877 2.1878v-2.0425a.1577.1577 0 0 0-.1497-.1497Z"
                                         fill="#0072b1"></path>
@@ -220,9 +242,9 @@
                                 </svg>&nbsp;
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                                     viewBox="0,0,256,256" style="fill:#000000;">
-                                    <g fill="#e1deec" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    <g fill="#444444" fill-rule="nonzero" stroke="none" stroke-width="1"
                                         stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="600"
                                         font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                                         <g transform="scale(5.12,5.12)">
                                             <path
@@ -327,7 +349,7 @@
             </div>
         </div>
     </section>
-   
+
     <!--PORTFOLIO SECTION-->
     <section id="portfolio" class="section-content">
         <h1 class="sub-title" translate="my portfolio"></h1>
@@ -424,9 +446,10 @@
                 </div>
             </div>
         </div>
-        <a class="btn" href="https://github.com/SamAudai?tab=repositories" target="_blank" translate="see more"></a>
+        <a class="btn" href="https://github.com/SamAudai?tab=repositories" target="_blank" translate="see more">Github
+            Repositories</a>
     </section>
-    
+
     <!--CONTACT SECTION-->
     <section id="contact" class="section-content">
         <h1 class="sub-title" translate="contact me"></h1>
@@ -443,7 +466,7 @@
                     <span id="loader" class="loader"></span>
                     <span id="msg" translate="msg"></span>
                 </form>
-              <!--   <a onclick="scrollToTop()" id="topBtn">
+                <!--   <a onclick="scrollToTop()" id="topBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-chevron-double-up" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -458,20 +481,20 @@
             <div class="contact-left">
                 <ul>
                     <li>
-                        <svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                            fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-envelope-fill" viewBox="0 0 16 16">
                             <path
                                 d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
-                                fill="#ed0a3f"></path>
+                                fill="#ffc200 "></path>
                         </svg>
                         <a href="mailto:audaisam5@gmail.com" translate="Email"></a>
                     </li>
                     <li>
-                        <svg style="color: rgb(237, 10, 63);" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                            fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-phone-fill"
+                            viewBox="0 0 16 16">
                             <path
                                 d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"
-                                fill="#ed0a3f"></path>
+                                fill="#ffc200 "></path>
                         </svg>
                         <a href="tel:+963931652715" translate="Phone"></a>
                     </li>
@@ -527,13 +550,13 @@
         </div>
     </section>
 
-    <!--COPYRIGHT SECTION-->
-    <section class="copyright">
-        <p translate="Implementation"></p>
-    </section>
-
-    <script src="i18n/language.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/animated-headline.js"></script>    
+    <script src="js/language.js"></script>
     <script src="js/main.js"></script>
 </body>
+
+<footer>
+    <!--COPYRIGHT SECTION-->
+    <div class="copyright">
+        <p translate="Implementation"></p>
+    </div>
+</footer>

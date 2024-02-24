@@ -5,9 +5,7 @@ let tabLinks = document.getElementsByClassName('tab-link');
 let tabContents = document.getElementsByClassName('tab-content');
 
 let sidemenu = document.querySelector('#sidemenu');
-let menu = document.querySelector('#checkbox1');
-
-let topBtn = document.getElementById("topBtn");
+let menu = document.querySelector('#checkbox1');;
 
 let moon = document.querySelector('.moon');
 let sun = document.querySelector('.sun');
@@ -29,11 +27,12 @@ function openSection(sectionName, link) {
 
     document.getElementById(link).classList.add('active-link');
     document.getElementById(sectionName).classList.add('active-section');
+    
     localStorage.setItem("section", sectionName);
     localStorage.setItem("link", link);
  
     const animation = document.getElementById(sectionName).animate(keyframes_sections, options);    
-    animation.play();
+    animation.play();   
 }
 
 function openTab(tabName) {
@@ -77,7 +76,7 @@ form.addEventListener('submit', event => {
 //Switch between light and dark mode and reversed
 function setThemeMode() {
     if (document.body.classList.contains('light')) {
-        document.body.classList.remove('light');
+        document.body.classList.toggle('light');
         moon.style.display = "none";
         sun.style.display = "inline-flex";
         localStorage.setItem('icon', "inline-flex")
@@ -85,17 +84,17 @@ function setThemeMode() {
     } else {
         sun.style.display = "none";
         moon.style.display = "inline-flex";
-        document.body.classList.add('light');
+        document.body.classList.toggle('light');
         localStorage.setItem('icon', "inline-flex")
         localStorage.setItem('theme', 'light');
     }
 }
 
 window.onload = () => {
-    document.getElementById(localStorage.getItem("link") || 'Home').classList.add('active-link');
-    document.getElementById(localStorage.getItem("section") || 'home').classList.add('active-section');
+    document.getElementById(localStorage.getItem("link") || 'Home').classList.toggle('active-link');
+    document.getElementById(localStorage.getItem("section") || 'home').classList.toggle('active-section');
     
-    document.body.classList.add(localStorage.getItem("theme") || 'body');
+    document.body.classList.toggle(localStorage.getItem("theme") || 'body');
     if (localStorage.getItem('theme') == 'light') {
         moon.style.display = localStorage.getItem('icon') || 'inline-flex';
     } else {
@@ -135,3 +134,8 @@ const options = {
     fill: 'forwards' // Keeps the final state after the animation
 };
 
+$(document).ready(()=>{
+    $("b").click(()=>{
+        alert('hello world');
+    })
+});
