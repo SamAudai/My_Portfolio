@@ -5,7 +5,7 @@ let tabLinks = document.getElementsByClassName('tab-link');
 let tabContents = document.getElementsByClassName('tab-content');
 
 let sidemenu = document.querySelector('#sidemenu');
-let menu = document.querySelector('#checkbox1');;
+let menuButton = document.querySelector('#menuButton');
 
 let moon = document.querySelector('.moon');
 let sun = document.querySelector('.sun');
@@ -50,8 +50,8 @@ function openTab(tabName) {
     animation.play();
 }
 
-menu.onclick = () => {
-    sidemenu.classList.toggle('active');
+menuButton.onclick = () => {
+    sidemenu.classList.toggle('active');    
 }
 
 //Submit information form to google sheet 
@@ -134,8 +134,8 @@ const options = {
     fill: 'forwards' // Keeps the final state after the animation
 };
 
-$(document).ready(()=>{
+/* $(document).ready(()=>{
     $("b").click(()=>{
         alert('hello world');
     })
-});
+}); */

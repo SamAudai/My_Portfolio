@@ -62,10 +62,10 @@ body {
 
 
 section {
-   width: 100%;
+    width: 100%;
     padding: 6% 10%;
     justify-content: space-evenly;
-} 
+}
 
 section.section-content {
     display: none;
@@ -109,6 +109,8 @@ section.section-content.active-section {
     --direction-nvabar-border-left: none;
 }
 
+
+
 /********************************HEADER SECTION STYLE*****************************/
 nav {
     position: fixed;
@@ -126,7 +128,6 @@ nav {
 }
 
 nav .logo {
-    max-width: 100%;
     width: 230px;
     height: auto;
     filter: invert(.35) sepia(1) saturate(10) hue-rotate(1.2deg);
@@ -141,7 +142,7 @@ nav ul li {
     text-decoration: none !important;
     text-transform: capitalize;
     font-size: calc(var(--p-font)-0.2);
-    padding: 0px 25px;
+    padding: 0px 20px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -151,7 +152,7 @@ nav ul li::after {
     position: absolute;
     width: 0;
     height: 2px;
-    margin: 0px;
+    margin: 0px 10px;
     background: var(--main-color);
     bottom: -5px;
     left: 0;
@@ -160,7 +161,7 @@ nav ul li::after {
 }
 
 nav ul li.active-link::after {
-    width: 100%;
+    width: 80%;
 }
 
 #checkbox1 {
@@ -171,47 +172,58 @@ nav ul li.active-link::after {
 
 .toggle {
     position: relative;
-    width: 34px;
-    height: 35px;
-    z-index: 10001;
+    width: 25px;
+    height: 20px;
     cursor: pointer;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 5px;
     transition-duration: .3s;
 }
 
 .bars {
-    width: 86%;
-    height: 3px;
-    background-color: var(--text-color);
-    border-radius: 5px;
-    transition-duration: .3s;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 4px;
 }
 
-#checkbox1:checked+.toggle .bars {
-    margin-left: 8px;
+#bar2 {
+    transition-duration: .8s;
 }
 
-#checkbox1:checked+.toggle #bar2 {
-    transform: rotate(135deg);
-    margin-left: 0;
-    transform-origin: center;
-    transition-duration: .3s;
+#bar1,
+#bar3 {
+    width: 50%;
 }
 
-#checkbox1:checked+.toggle #bar1 {
+#checkbox:checked+.toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle #bar1 {
+    width: 75%;
     transform: rotate(45deg);
-    transition-duration: .3s;
-    transform-origin: left center;
+    transition-duration: .5s;
 }
 
-#checkbox1:checked+.toggle #bar3 {
+#checkbox:checked+.toggle #bar3 {
+    width: 75%;
     transform: rotate(-45deg);
-    transition-duration: .3s;
-    transform-origin: left center;
+    transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
 }
 
 .tools {
@@ -252,6 +264,8 @@ nav ul li.active-link::after {
     display: none;
     cursor: pointer;
     animation: rotate 20s linear infinite;
+    transition-delay: 200ms;
+    transform: scale(1) rotate(360deg);
 }
 
 .moon {
@@ -263,6 +277,7 @@ nav ul li.active-link::after {
     display: none;
     cursor: pointer;
     animation: tilt 5s linear infinite;
+    transform: rotate(360deg) scale(0);
 }
 
 @keyframes rotate {
@@ -305,7 +320,7 @@ nav ul li.active-link::after {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 .row-header .header-text {
@@ -336,6 +351,7 @@ nav ul li.active-link::after {
 
 .row-header .header-image {
     width: 380px;
+    height: auto;
 }
 
 /*---------------------------------------
@@ -365,11 +381,11 @@ nav ul li.active-link::after {
     animation: BottomTotop 6s linear infinite 0s;
 }
 
-.animated-item:nth-child(2n+2) {
+.animated-item:nth-child(n+2) {
     animation-delay: 2s;
 }
 
-.animated-item:nth-child(3n+3) {
+.animated-item:nth-child(n+3) {
     animation-delay: 4s;
 }
 
@@ -960,10 +976,9 @@ form .btn-2 {
 }
 
 .copyright {
-    position: sticky;
+    display: block;
     width: 100%;
     bottom: 0;
-    right: 0;
     text-align: center;
     text-transform: capitalize;
     padding: 25px 0;
@@ -976,30 +991,35 @@ form .btn-2 {
 
 /*******************************Responsive Design**************************************/
 /******************SMALL SCREEN STYLE******************************/
-@media (min-width: 1270px) {
+@media (max-width: 1280px) {
+    section {
+        padding: 12% 6% 19%;
+        justify-content: flex-start;
+        align-self: center;
+    }
+
     .timeline-wrapper::before {
         height: 130%;
     }
 
-    .about-col-1{
+    .about-col-1 {
         flex-basis: 20%;
     }
-    .about-col-2{
+
+    .about-col-2 {
         flex-basis: 60%;
     }
 
     .about-col-1 {
         margin-bottom: 15px;
     }
+
+    .copyright {
+        position: fixed;
+    }
 }
 
 @media (max-width: 991px) {
-    section {
-        width: 100%;
-        padding: 12% 6%;
-        justify-content: flex-start;
-        align-self: center;
-     } 
 
     #sidemenu.active {
         top: 100%;
@@ -1051,10 +1071,6 @@ form .btn-2 {
         justify-content: flex-start;
     }
 
-    .row-header {
-        margin-top: 60px;
-    }
-
     .row-header .header-text h1 {
         font-weight: 600;
         font-size: 45px;
@@ -1063,10 +1079,6 @@ form .btn-2 {
     .row-header .header-text h4 {
         font-size: 25px;
         font-weight: 600;
-    }
-
-    .row-header .header-text span.slogen{
-        margin-bottom: 25px;
     }
 
     .row-header .header-image img {
@@ -1084,6 +1096,19 @@ form .btn-2 {
 
     .timeline-wrapper::before {
         height: 120%;
+    }
+
+    .work-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .card {
+        width: 40%;
+        height: 350px;
     }
 
     .contact-left,
@@ -1126,6 +1151,11 @@ form .btn-2 {
     .row-header .header-image img {
         width: 300px;
     }
+
+    .card {
+        width: 70%;
+        height: 350px;
+    }
 }
 
 @media (max-width: 580px) {
@@ -1157,7 +1187,6 @@ form .btn-2 {
 
     .row-header .header-text h4 {
         font-size: 16px;
-        margin-bottom: 5px;
     }
 
     .row-header .header-text span.words {
@@ -1174,10 +1203,6 @@ form .btn-2 {
         width: 250px;
     }
 
-    .work-list {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    }
-
     .card__content {
         padding: 2px;
     }
@@ -1185,13 +1210,7 @@ form .btn-2 {
     .copyright {
         padding: 15px 0;
         bottom: 0;
-        font-size: 12px; 
+        font-size: 12px;
+        position: fixed;
     }
-}
-
-@media (max-width: 320px) {
-    .copyright {
-        bottom: 0;
-    }
-
 }

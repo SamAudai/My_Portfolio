@@ -16,31 +16,28 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
 <header>
     <!--NAVBAR SECTION-->
     <div id="navbar">
         <nav>
-            <img id="logo" src="img/logo3.svg" class="logo" alt="logo image">
-            <ul id="sidemenu">
-                <li id="Home" class="section-link" onclick="openSection('home','Home')" translate="home"></li>
-                <li id="Resume" class="section-link" onclick="openSection('about','Resume')" translate="resume"></li>
-                <li id="Portfolio" class="section-link" onclick="openSection('portfolio','Portfolio')"
-                    translate="portfolio"></li>
-                <li id="Contact" class="section-link" onclick="openSection('contact','Contact')" translate="contact">
-                </li>
-            </ul>
-            <input type="checkbox" id="checkbox1">
-            <label for="checkbox1" class="toggle">
+            <img id="logo" src="img/logo.svg" class="logo" alt="logo image">
+            <input hidden type="checkbox" id="checkbox">
+            <label id="menuButton" class="toggle" for="checkbox">
                 <div class="bars" id="bar1"></div>
                 <div class="bars" id="bar2"></div>
                 <div class="bars" id="bar3"></div>
             </label>
+            <ul id="sidemenu">
+                <li id="Home" class="section-link" onclick="openSection('home','Home')" translate="home"></li>
+                <li id="Resume" class="section-link" onclick="openSection('about','Resume')" translate="resume"></li>
+                <li id="Portfolio" class="section-link" onclick="openSection('portfolio','Portfolio')" translate="portfolio"></li>
+                <li id="Contact" class="section-link" onclick="openSection('contact','Contact')" translate="contact">
+                </li>
+            </ul>           
             <div class="tools">
                 <div class="icon" onclick="setThemeMode()">
                     <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -82,7 +79,7 @@
                 </span>
             </div>
             <div class="header-image">
-                <img src="img/logo_1.svg" alt="svg image">
+                <img loading="lazy" src="img/Software engineer_1.svg" alt="svg image">
             </div>
         </div>
     </section>
@@ -92,7 +89,7 @@
         <h1 class="sub-title" translate="my resume"></h1>
         <div class="row-about">
             <div class="about-col-1">
-                <img src="img/20200810_092747499_iOS.webp" alt="personal image">
+                <img loading="lazy" src="img/20200810_092747499_iOS.webp" alt="personal image">
             </div>
             <div class="about-col-2">
                 <div class="tab-title">
@@ -355,7 +352,7 @@
         <h1 class="sub-title" translate="my portfolio"></h1>
         <div class="work-list">
             <div class="card">
-                <img src="img/work2.svg" alt="User Management Picture">
+                <img loading="lazy" src="img/work2.svg" alt="User Management Picture">
                 <p class="card__title" translate="User Management"></p>
                 <div class="card__content">
                     <!-- <p class="card__title" translate="User Management"></p> -->
@@ -371,7 +368,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/work1.svg" alt="Portfolio_A Picture">
+                <img loading="lazy" src="img/work1.svg" alt="Portfolio_A Picture">
                 <p class="card__title" translate="Portfolio Website1"></p>
                 <div class="card__content">
                     <p class="card__description" translate="Portfolio Website1 description"></p>
@@ -386,7 +383,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/work7.svg" alt="Portfolio_ASP Picture">
+                <img loading="lazy" src="img/work7.svg" alt="Portfolio_ASP Picture">
                 <p class="card__title" translate="Portfolio Website2"></p>
                 <div class="card__content">
                     <p class="card__description" translate="Portfolio Website2 description"></p>
@@ -401,7 +398,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/work4.svg" alt="Restaurant_BE Picture">
+                <img loading="lazy" src="img/work4.svg" alt="Restaurant_BE Picture">
                 <p class="card__title" translate="Restaurant backend"></p>
                 <div class="card__content">
                     <p class="card__description" translate="Restaurant backend description"></p>
@@ -416,7 +413,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/work3.svg" alt="Restaurant_FE Picture">
+                <img loading="lazy" src="img/work3.svg" alt="Restaurant_FE Picture">
                 <p class="card__title" translate="Restaurant Frontend"></p>
                 <div class="card__content">
                     <p class="card__description" translate="Restaurant Frontend description"></p>
@@ -431,7 +428,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="img/work5.svg" alt="Geodata Picture">
+                <img loading="lazy" src="img/work5.svg" alt="Geodata Picture">
                 <p class="card__title" translate="Geodata"></p>
                 <div class="card__content">
                     <p class="card__description" translate="Geodata description"></p>
@@ -446,8 +443,9 @@
                 </div>
             </div>
         </div>
-        <a class="btn" href="https://github.com/SamAudai?tab=repositories" target="_blank" translate="see more">Github
-            Repositories</a>
+        <a class="btn" href="https://github.com/SamAudai?tab=repositories" target="_blank">
+            <span translate="more projects"></span>
+        </a>
     </section>
 
     <!--CONTACT SECTION-->
