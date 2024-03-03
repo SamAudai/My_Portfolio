@@ -60,7 +60,6 @@ body {
     color: var(--main-color);
 }
 
-
 section {
     width: 100%;
     padding: 6% 10%;
@@ -108,7 +107,6 @@ section.section-content.active-section {
     --direction-nvabar-border-right: 2px solid var(--body-font-color);
     --direction-nvabar-border-left: none;
 }
-
 
 
 /********************************HEADER SECTION STYLE*****************************/
@@ -163,6 +161,7 @@ nav ul li::after {
 nav ul li.active-link::after {
     width: 80%;
 }
+
 
 #checkbox1 {
     z-index: 10001;
@@ -226,6 +225,7 @@ nav ul li.active-link::after {
     transform: rotate(180deg);
 }
 
+
 .tools {
     display: flex;
     align-items: center;
@@ -233,6 +233,7 @@ nav ul li.active-link::after {
 }
 
 .lang span {
+    display: none;
     position: relative;
     color: var(--text-color);
     font-size: calc(var(--p-font)*0.77);
@@ -242,16 +243,8 @@ nav ul li.active-link::after {
     transition-duration: .5s;
 }
 
-#en {
-    display: none;
-}
-
-#ar {
-    display: none;
-}
-
-.lang p:hover,
-.lang p:focus {
+.lang span:hover,
+.lang span:focus {
     color: var(--main-color);
 }
 
@@ -264,8 +257,6 @@ nav ul li.active-link::after {
     display: none;
     cursor: pointer;
     animation: rotate 20s linear infinite;
-    transition-delay: 200ms;
-    transform: scale(1) rotate(360deg);
 }
 
 .moon {
@@ -277,7 +268,6 @@ nav ul li.active-link::after {
     display: none;
     cursor: pointer;
     animation: tilt 5s linear infinite;
-    transform: rotate(360deg) scale(0);
 }
 
 @keyframes rotate {
@@ -298,7 +288,7 @@ nav ul li.active-link::after {
     }
 
     25% {
-        transform: rotate(-10deg);
+        transform: rotate(-12deg);
     }
 
     75% {
@@ -350,7 +340,7 @@ nav ul li.active-link::after {
 }
 
 .row-header .header-image {
-    width: 380px;
+    width: 320px;
     height: auto;
 }
 
@@ -839,7 +829,7 @@ nav ul li.active-link::after {
 }
 
 .contact-left ul li svg {
-    transform: translateY(8px);
+    transform: translateY(6px);
 }
 
 .contact-left ul li a:hover {
@@ -1041,24 +1031,29 @@ form .btn-2 {
 
     nav ul li {
         display: block;
-        margin: 30px;
+        margin: 10px;
         border-left: var(--direction-nvabar-border-left);
         border-right: var(--direction-nvabar-border-right);
         color: var(--body-font-color);
         font-size: 17px;
-        padding: 15px;
+        padding: 20px;
+    }
+
+    nav ul li.active-link {
+        color: var(--text-color);
+    }
+
+    nav ul li.active-link::after {
+        width: 0%;
     }
 
     nav ul li:hover {
-        background: var(--light-color);
+        color: var(--text-color);
 
-    }
-
-    nav ul li::after {
-        display: none;
     }
 
     .lang span {
+        font-weight: normal;
         padding: 0px 10px;
     }
 
@@ -1082,7 +1077,7 @@ form .btn-2 {
     }
 
     .row-header .header-image img {
-        width: 400px;
+        width: 300px;
     }
 
     .about-col-1,
@@ -1123,15 +1118,14 @@ form .btn-2 {
 }
 
 @media (max-width: 767px) {
+    nav ul li {
+        margin: 6px;
+        font-size: 12px;
+        padding: 12px;
+    }
 
     nav .logo {
         max-width: 40%;
-    }
-
-    nav ul li {
-        margin: 8px;
-        font-size: 12px;
-        padding: 10px;
     }
 
     .row-header .header-text h1 {
@@ -1146,10 +1140,11 @@ form .btn-2 {
 
     .row-header .header-text span.slogen p {
         font-size: 17px;
+        word-wrap: break-word;
     }
 
     .row-header .header-image img {
-        width: 300px;
+        width: 250px;
     }
 
     .card {

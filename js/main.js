@@ -27,12 +27,12 @@ function openSection(sectionName, link) {
 
     document.getElementById(link).classList.add('active-link');
     document.getElementById(sectionName).classList.add('active-section');
-    
+
     localStorage.setItem("section", sectionName);
     localStorage.setItem("link", link);
- 
-    const animation = document.getElementById(sectionName).animate(keyframes_sections, options);    
-    animation.play();   
+
+    const animation = document.getElementById(sectionName).animate(keyframes_sections, options);
+    animation.play();
 }
 
 function openTab(tabName) {
@@ -46,12 +46,12 @@ function openTab(tabName) {
     this.event.currentTarget.classList.add('active-link');
     document.getElementById(tabName).classList.add('active-tab');
 
-    const animation = document.getElementById(tabName).animate(keyframes_tabs, options);    
+    const animation = document.getElementById(tabName).animate(keyframes_tabs, options);
     animation.play();
 }
 
 menuButton.onclick = () => {
-    sidemenu.classList.toggle('active');    
+    sidemenu.classList.toggle('active');
 }
 
 //Submit information form to google sheet 
@@ -76,7 +76,7 @@ form.addEventListener('submit', event => {
 //Switch between light and dark mode and reversed
 function setThemeMode() {
     if (document.body.classList.contains('light')) {
-        document.body.classList.toggle('light');
+        document.body.classList.remove('light');
         moon.style.display = "none";
         sun.style.display = "inline-flex";
         localStorage.setItem('icon', "inline-flex")
@@ -91,9 +91,8 @@ function setThemeMode() {
 }
 
 window.onload = () => {
-    document.getElementById(localStorage.getItem("link") || 'Home').classList.toggle('active-link');
-    document.getElementById(localStorage.getItem("section") || 'home').classList.toggle('active-section');
-    
+    openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
+
     document.body.classList.toggle(localStorage.getItem("theme") || 'body');
     if (localStorage.getItem('theme') == 'light') {
         moon.style.display = localStorage.getItem('icon') || 'inline-flex';
