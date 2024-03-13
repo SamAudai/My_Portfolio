@@ -4,9 +4,6 @@ let sectionContents = document.getElementsByClassName('section-content');
 let tabLinks = document.getElementsByClassName('tab-link');
 let tabContents = document.getElementsByClassName('tab-content');
 
-let sidemenu = document.querySelector('#sidemenu');
-let menuButton = document.querySelector('#menuButton');
-
 let moon = document.querySelector('.moon');
 let sun = document.querySelector('.sun');
 
@@ -50,9 +47,9 @@ function openTab(tabName) {
     animation.play();
 }
 
-menuButton.onclick = () => {
-    sidemenu.classList.toggle('active');
-}
+$('#menuButton').click(() => {
+    $('#sidemenu').toggleClass('active');
+});
 
 //Submit information form to google sheet 
 form.addEventListener('submit', event => {
@@ -90,7 +87,7 @@ function setThemeMode() {
     }
 }
 
-window.onload = () => {
+$(() => {
     openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
 
     document.body.classList.toggle(localStorage.getItem("theme") || 'body');
@@ -99,24 +96,8 @@ window.onload = () => {
     } else {
         sun.style.display = localStorage.getItem('icon') || 'inline-flex';
     }
-}
 
-/* function scrollToTop() {
-    document.documentElement.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-    topBtn.onclick=openSection(home);
-}  */
-
-/* window.onscroll = () => {
-    if (window.scrollY > 150) {
-        topBtn.style.visibility = "visible";
-        topBtn.style.cursor = "pointer";
-    } else {
-        topBtn.style.visibility = "hidden";
-    }
-}; */
+});
 
 // Define the animations
 const keyframes_sections = [
@@ -132,9 +113,3 @@ const options = {
     easing: 'ease-in-out',
     fill: 'forwards' // Keeps the final state after the animation
 };
-
-/* $(document).ready(()=>{
-    $("b").click(()=>{
-        alert('hello world');
-    })
-}); */

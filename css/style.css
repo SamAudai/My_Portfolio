@@ -62,8 +62,8 @@ body {
 
 section {
     width: 100%;
-    padding: 6% 10%;
-    justify-content: space-evenly;
+    padding: 10%;
+    margin-top: 2%;
 }
 
 section.section-content {
@@ -115,10 +115,11 @@ nav {
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 1000;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10001;
     background: var(--dark-color);
     box-shadow: var(--shadow-navbar);
     padding: 15px 10%;
@@ -126,20 +127,20 @@ nav {
 }
 
 nav .logo {
-    width: 230px;
+    width: 190px;
     height: auto;
     filter: invert(.35) sepia(1) saturate(10) hue-rotate(1.2deg);
 }
 
 nav ul {
-    display: flex;
+    display: inline-flex;
 }
 
 nav ul li {
     position: relative;
     text-decoration: none !important;
     text-transform: capitalize;
-    font-size: calc(var(--p-font)-0.2);
+    font-size: calc(var(--p-font)*0.8);
     padding: 0px 20px;
     font-weight: 600;
     cursor: pointer;
@@ -236,7 +237,7 @@ nav ul li.active-link::after {
     display: none;
     position: relative;
     color: var(--text-color);
-    font-size: calc(var(--p-font)*0.77);
+    font-size: calc(var(--p-font)*0.7);
     font-weight: bold;
     padding: 0px 20px;
     cursor: pointer;
@@ -301,9 +302,6 @@ nav ul li.active-link::after {
 }
 
 /********************************HOME SECTION STYLE*****************************/
-#home {
-    margin-top: 50px;
-}
 
 .row-header {
     display: flex;
@@ -415,9 +413,6 @@ nav ul li.active-link::after {
 
 
 /********************************ABOUT SECTION STYLE*****************************/
-#about {
-    margin-top: 50px;
-}
 
 .row-about {
     display: flex;
@@ -638,9 +633,6 @@ nav ul li.active-link::after {
 }
 
 /******************PORTFOLIO SECTION STYLE******************************/
-#portfolio {
-    margin-top: 50px;
-}
 
 .work-list {
     display: grid;
@@ -792,9 +784,6 @@ nav ul li.active-link::after {
 
 
 /******************CONTACT SECTION STYLE******************************/
-#contact {
-    margin-top: 50px;
-}
 
 .row-contact {
     display: flex;
@@ -906,25 +895,6 @@ form .btn-2 {
     background-color: #ffffff;
 }
 
-/* .contact-right svg {
-    position: fixed;
-    bottom: 5rem;
-    right: .2rem;
-    scroll-behavior: smooth;
-    color: var(--text-color);
-    animation: action 1s infinite alternate;
-
-}
-@keyframes action {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-15px);
-    }
-} */
-
 #msg {
     position: absolute;
     color: #11ad11;
@@ -984,6 +954,7 @@ form .btn-2 {
 @media (max-width: 1280px) {
     section {
         padding: 12% 6% 19%;
+        margin-top: 10%;
         justify-content: flex-start;
         align-self: center;
     }
@@ -1125,7 +1096,7 @@ form .btn-2 {
     }
 
     nav .logo {
-        max-width: 40%;
+        max-width: 37%;
     }
 
     .row-header .header-text h1 {
@@ -1156,7 +1127,7 @@ form .btn-2 {
 @media (max-width: 580px) {
 
     .lang span {
-        font-size: calc(var(--p-font)*0.65);
+        font-size: calc(var(--p-font)*0.57);
 
     }
 
