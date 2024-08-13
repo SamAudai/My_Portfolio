@@ -9,9 +9,44 @@ let sun = document.querySelector('.sun');
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyEYtV4D3WXzfpUui2sSgU3lKN2c8R_V1NDdc7BqifcJgUjE5TMZKj33ySK-5zN55FiyA/exec';
 const form = document.forms['form-submit'];
-const msg = document.getElementById('msg');
-let loader = document.getElementById('loader');
-let button = document.getElementById('button');
+const msg = document.querySelector('#msg');
+let loader = document.querySelector('#loader');
+let button = document.querySelector('#button');
+
+$(document).ready(() => {
+    openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
+
+    document.body.classList.toggle(localStorage.getItem("theme") || 'body');
+    if (localStorage.getItem('theme') == 'light') {
+        moon.style.display = localStorage.getItem('icon') || 'inline-flex';
+    } else {
+        sun.style.display = localStorage.getItem('icon') || 'inline-flex';
+    }
+
+    //Submit information form to google sheet 
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        loader.style.display = "block";
+        button.classList.add('disabled');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(() => {
+                msg.style.display = "block";
+                loader.style.display = "none";
+                setTimeout(() => {
+                    msg.style.display = "none";
+                    button.classList.remove('disabled');
+                }, 2000);
+
+                form.reset();
+                //alert('Message sent successfully!');
+            })
+            .catch(error => alert('Error!', error.message))
+    });
+
+    $('#menuButton').click(() => {
+        $('#sidemenu').toggleClass('active');
+    });
+});
 
 //Navegation between sections
 function openSection(sectionName, link) {
@@ -32,6 +67,7 @@ function openSection(sectionName, link) {
     animation.play();
 }
 
+//Navegation between Tabs to Resume section
 function openTab(tabName) {
     for (var tabLink of tabLinks) {
         tabLink.classList.remove("active-link");
@@ -46,29 +82,6 @@ function openTab(tabName) {
     const animation = document.getElementById(tabName).animate(keyframes_tabs, options);
     animation.play();
 }
-
-$('#menuButton').click(() => {
-    $('#sidemenu').toggleClass('active');
-});
-
-//Submit information form to google sheet 
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    loader.style.display = "block";
-    button.classList.add('disabled');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(() => {
-            msg.style.display = "block";
-            loader.style.display = "none";
-            setTimeout(() => {
-                msg.style.display = "none";
-                button.classList.remove('disabled');
-            }, 2000);
-
-            form.reset();
-        })
-        .catch(error => console.error('Error!', error.message))
-});
 
 //Switch between light and dark mode and reversed
 function setThemeMode() {
@@ -87,21 +100,9 @@ function setThemeMode() {
     }
 }
 
-$(() => {
-    openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
-
-    document.body.classList.toggle(localStorage.getItem("theme") || 'body');
-    if (localStorage.getItem('theme') == 'light') {
-        moon.style.display = localStorage.getItem('icon') || 'inline-flex';
-    } else {
-        sun.style.display = localStorage.getItem('icon') || 'inline-flex';
-    }
-
-});
-
 // Define the animations
 const keyframes_sections = [
-    { transform: 'translateY(-100px)', opacity: 0 },
+    { transform: 'translateY(-120px)', opacity: 0 },
     { transform: 'translateY(0px)', opacity: 1 }
 ];
 const keyframes_tabs = [
