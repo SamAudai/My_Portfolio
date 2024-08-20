@@ -1,9 +1,11 @@
 let sectionLinks = document.getElementsByClassName('section-link');
 let sectionContents = document.getElementsByClassName('section-content');
 
-let tabLinks = document.getElementsByClassName('tab-link');
-let tabContents = document.getElementsByClassName('tab-content');
+let tabLinks = document.querySelectorAll('.tab-link');
+let tabContents = document.querySelectorAll('.tab-content');
 
+let menu = document.querySelector('#menuButton');
+let sideMenu = document.querySelector('#sidemenu');
 let moon = document.querySelector('.moon');
 let sun = document.querySelector('.sun');
 
@@ -13,7 +15,7 @@ const msg = document.querySelector('#msg');
 let loader = document.querySelector('#loader');
 let button = document.querySelector('#button');
 
-$(document).ready(() => {
+this.addEventListener('load',()=>{
     openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
 
     document.body.classList.toggle(localStorage.getItem("theme") || 'body');
@@ -24,7 +26,7 @@ $(document).ready(() => {
     }
 
     //Submit information form to google sheet 
-    form.addEventListener('submit', event => {
+    form.addEventListener('submit', (event)=>{
         event.preventDefault();
         loader.style.display = "block";
         button.classList.add('disabled');
@@ -42,9 +44,16 @@ $(document).ready(() => {
             })
             .catch(error => alert('Error!', error.message))
     });
-
-    $('#menuButton').click(() => {
-        $('#sidemenu').toggleClass('active');
+    
+    //active main menu for small divice
+    menu.addEventListener('click',()=>{
+        if(sideMenu.classList.contains('active')){
+            sideMenu.classList.remove('active');
+            return;
+        }
+        sideMenu.classList.add('active');
+        const animation = sideMenu.animate(keyframes_sideMenu, options);
+        animation.play();
     });
 });
 
@@ -94,7 +103,7 @@ function setThemeMode() {
     } else {
         sun.style.display = "none";
         moon.style.display = "inline-flex";
-        document.body.classList.toggle('light');
+        document.body.classList.add('light');
         localStorage.setItem('icon', "inline-flex")
         localStorage.setItem('theme', 'light');
     }
@@ -108,6 +117,12 @@ const keyframes_sections = [
 const keyframes_tabs = [
     { transform: 'scale(1.0)', opacity: 0 },
     { transform: 'scale(1.0)', opacity: 1 }
+];
+const keyframes_sideMenu = [
+    { transform: 'translateY(-100px)', opacity: 0 },
+    { transform: 'translateY(0px)', opacity: 1 },
+    { transform: 'translateY(50px)', opacity: 1 },
+    { transform: 'translateY(0px)', opacity: 1 }
 ];
 const options = {
     duration: 700,
