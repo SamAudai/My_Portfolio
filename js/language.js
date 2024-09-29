@@ -8,9 +8,9 @@ function updateContent(langData) {
 
 // Function to set the language preference
 function setLanguagePreference(lang) {
-    localStorage.setItem('language', lang);
-    toggleArabicStyle(lang); // Toggle Arabic stylesheet 
-    window.location.reload();    
+    localStorage.setItem('language', lang);    
+    window.location.reload(); 
+    toggleArabicStyle(lang); // Toggle Arabic stylesheet    
 }
 
 // Function to fetch language data
