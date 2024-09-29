@@ -9,8 +9,7 @@ function updateContent(langData) {
 // Function to set the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);    
-    window.location.reload(); 
-    toggleArabicStyle(lang); // Toggle Arabic stylesheet    
+    window.location.reload();     
 }
 
 // Function to fetch language data
@@ -23,7 +22,7 @@ async function fetchLanguageData(lang) {
 async function changeLanguage(lang) {
     setLanguagePreference(lang);
     const langData = await fetchLanguageData(lang);
-    //toggleArabicStyle(lang); // Toggle Arabic stylesheet  
+    toggleArabicStyle(lang); // Toggle Arabic stylesheet  
     updateContent(langData);          
 }
 
