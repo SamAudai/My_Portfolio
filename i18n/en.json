@@ -1,5 +1,5 @@
 {
-  "name": "Audai Alsharani",
+  "name": "Audai Salman Alsharani",
   "home": "home",
   "portfolio": "Portfolio",
   "resume": "Resume",
@@ -74,8 +74,8 @@
   "Restaurant backend": "Restaurant backend",
   "Restaurant backend description": "The site is a restaurant serving meals and booking tables, the backend was implemented by NodeJS and Express framework and the Mongo database",
   "This project is portfolio website that created using .Net core and sql server": "This project is portfolio website that created using .Net core and sql server",
-  "Geodata": "Geodata",
-  "Geodata description": "Google Places API with a database SQLite and Visualizing Data on Google Map, implemented with Python...",
+  "Geodata": "E-commerce Portal",
+  "Geodata description": "This project is like ecommerce portal where some of the user(Seller) who want to sell the product and services using this and some of the user(Buyer/End User) who needs the product they can buy from the user(Seller).",
   "News":"News Website",
   "News description":"A site for publishing news materials of various categories, with an integrated management system for users. Designed using the C# programming language and Blazor technology."
 }

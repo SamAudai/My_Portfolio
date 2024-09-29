@@ -443,7 +443,7 @@ nav ul li.active-link::after {
 
 .tab-title {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 25px;
 }
@@ -785,20 +785,20 @@ nav ul li.active-link::after {
 
 .row-contact {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .contact-left {
-    display: block;
+    display: inline-block;
     flex-basis: 40%;
     margin-top: 20px;
 }
 
 .contact-right {
-    display: block;
+    display: inline-block;
     flex-basis: 60%;
 }
 

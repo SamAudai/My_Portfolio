@@ -4,7 +4,6 @@ let sectionContents = document.getElementsByClassName('section-content');
 let tabLinks = document.querySelectorAll('.tab-link');
 let tabContents = document.querySelectorAll('.tab-content');
 
-let menu = document.querySelector('#menuButton');
 let sideMenu = document.querySelector('#sidemenu');
 let moon = document.querySelector('.moon');
 let sun = document.querySelector('.sun');
@@ -15,7 +14,7 @@ const msg = document.querySelector('#msg');
 let loader = document.querySelector('#loader');
 let button = document.querySelector('#button');
 
-this.addEventListener('load',()=>{
+this.addEventListener('DOMContentLoaded',()=>{
     openSection(localStorage.getItem("section") || 'home', localStorage.getItem("link") || 'Home');
 
     document.body.classList.toggle(localStorage.getItem("theme") || 'body');
@@ -42,11 +41,11 @@ this.addEventListener('load',()=>{
                 form.reset();
                 //alert('Message sent successfully!');
             })
-            .catch(error => alert('Error!', error.message))
+            .catch(error => alert('Error!', error.message));
     });
     
     //active main menu for small divice
-    menu.addEventListener('click',()=>{
+    document.querySelector('#menuButton').addEventListener('click',()=>{
         if(sideMenu.classList.contains('active')){
             sideMenu.classList.remove('active');
             return;
@@ -55,6 +54,9 @@ this.addEventListener('load',()=>{
         const animation = sideMenu.animate(keyframes_sideMenu, options);
         animation.play();
     });
+
+    document.querySelector('.icon').addEventListener('click', ()=>{setThemeMode()});
+
 });
 
 //Navegation between sections
