@@ -148,6 +148,7 @@ nav ul li {
     font-size: calc(var(--p-font)*0.8);
     padding: 0px 20px;
     font-weight: 600;
+    width: max-content;
     cursor: pointer;
 }
 
@@ -157,10 +158,9 @@ nav ul li::after {
     width: 0;
     height: 2px;
     background: var(--main-color);
-    bottom: 0px;
+    bottom: 0;
     left: 0;
-    right: 0;
-    transition: ease-in-out .1s;
+    transition: 100ms;
 }
 
 nav ul li.active-link::after {
