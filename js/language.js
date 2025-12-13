@@ -12,14 +12,14 @@
     try {
       const code =
         typeof lang === "string" ? lang : lang && lang.code ? lang.code : "en";
-      const path = `/assets/localization/${code}.json`;
+      const path = `localization/${code}.json`;
       const response = await fetch(path);
 
       if (!response.ok) {
         console.warn(
           `Localization file not found: ${path} (status ${response.status}). Falling back to 'en'.`
         );
-        const fallback = await fetch(`/assets/localization/en.json`);
+        const fallback = await fetch(`localization/en.json`);
         if (!fallback.ok) throw new Error("Fallback localization not found");
         return await fallback.json();
       }

@@ -296,7 +296,7 @@
     document.querySelectorAll('a[href="#nonexistent"]').forEach(a => {
       a.addEventListener('click', function(e){
         e.preventDefault();
-        alert('تنبيه: هذا الرابط قيد الإنشاء حالياً، سيتم تفعيله قريباً.');
+        alert("Attention: This link is currently under construction and will be activated soon.");
       });
     });
   };
