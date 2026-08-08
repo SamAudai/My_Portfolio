@@ -109,57 +109,46 @@
     });
   };
 
-  // تهيئة الثيم مع دمج الأيقونات الموجودة داخل .theme-btn
+  // تهيئة الثيم (تم إعادة كتابتها بالكامل لإصلاح ظهور الأيقونتين معًا)
   const initTheme = () => {
     const toggle = document.querySelector(".theme-btn");
     const sun = document.querySelector("#sun");
     const moon = document.querySelector("#moon");
 
-    const storedTheme = readLS("theme", null); // "dark" أو "light" أو null
-    const storedIcon = readLS("icon", null); // "sun" أو "moon" أو null
-    const prefersDark = window.matchMedia?.(
-      "(prefers-color-scheme: dark-mode)"
-    ).matches;
+    // بدون العنصرين لا يمكن إدارة الأيقونات، فلا داعي للمتابعة
+    if (!sun || !moon) return;
 
-    // تطبيق الحالة المحفوظة أو الافتراضي القائم على تفضيل النظام
-    if (storedTheme) {
-      const isDark = storedTheme === "dark-mode";
+    // دالة واحدة موحّدة لتطبيق حالة الثيم على body والأيقونتين معًا
+    // (isDark = true تعني القسم المظلم مفعّل)
+    const applyTheme = (isDark) => {
       document.body.classList.toggle("light-mode", isDark);
-      sun.style.display = isDark
-        ? storedIcon === "sun"
-          ? "inline-flex"
-          : "none"
-        : "inline-flex";
-      moon.style.display = isDark
-        ? storedIcon === "moon"
-          ? "inline-flex"
-          : "none"
-        : "none";
-    } else if (prefersDark) {
-      document.body.classList.add("light-mode");
-      sun.style.display = isDark
-        ? storedIcon === "sun"
-          ? "inline-flex"
-          : "none"
-        : "none";
-      moon.style.display = isDark
-        ? storedIcon === "moon"
-          ? "inline-flex"
-          : "none"
-        : "inline-flex";
+      sun.style.display = isDark ? "none" : "inline-flex";
+      moon.style.display = isDark ? "inline-flex" : "none";
+    };
+
+    // "dark-mode" أو "light-mode" أو null إن لم يسبق الحفظ
+    const storedTheme = readLS("theme", null);
+
+    let isDark;
+    if (storedTheme === "dark-mode" || storedTheme === "light-mode") {
+      isDark = storedTheme === "dark-mode";
+    } else {
+      // لا توجد قيمة محفوظة صالحة بعد: استخدم تفضيل النظام
+      // (تم تصحيح قيمة الميديا كويري من "dark-mode" الخاطئة إلى "dark")
+      isDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
     }
 
-    writeLS("theme", storedTheme);
-    writeLS("icon", storedIcon);
+    applyTheme(isDark);
+    // نحفظ قيمة نصية صريحة دائمًا، فلا تتكرر مشكلة حفظ "null" كسلسلة نصية
+    writeLS("theme", isDark ? "dark-mode" : "light-mode");
 
     // تفعّل الزر إن وُجد
     if (toggle) {
       toggle.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("light-mode");
-        sun.style.display = isDark ? "none" : "inline-flex";
-        moon.style.display = isDark ? "inline-flex" : "none";
-        writeLS("theme", isDark ? "dark-mode" : "light-mode");
-        writeLS("icon", isDark ? "moon" : "sun");
+        const nowDark = document.body.classList.toggle("light-mode");
+        sun.style.display = nowDark ? "none" : "inline-flex";
+        moon.style.display = nowDark ? "inline-flex" : "none";
+        writeLS("theme", nowDark ? "dark-mode" : "light-mode");
       });
     }
   };
@@ -203,9 +192,11 @@
     });
   };
 
-  const initSkillsIntervial = () => {
+  const initSkillsInterval = () => {
     // احصل على العناصر وتحديث النص الظاهر
     const items = Array.from(document.querySelectorAll(".animated-item"));
+    if (items.length === 0) return;
+
     // اجعل النصوص مرئية من النص المحفوظ في data-text
     items.forEach((el) => {
       el.textContent = el.getAttribute("data-text");
@@ -221,7 +212,7 @@
       });
     }
 
-    // ابدأ بالدوران كل 2 ثوانِ (تعديل الوقت كما تريد)
+    // ابدأ بالدوران كل 5 ثوانِ (تعديل الوقت كما تريد)
     const INTERVAL_MS = 5000;
     setInterval(() => {
       index = (index + 1) % total;
@@ -266,15 +257,19 @@
       if (checkbox.checked) {
         // فتح
         sideMenu.classList.add("active"); // يمكن حفظ الحالة في CSS
-        sideMenu.animate(keyframes_open, options).play();
+        sideMenu.animate(keyframes_open, options);
       } else {
         // إغلاق
-        sideMenu.animate(keyframes_close, options).play();
-        // إزالة الـ active بعد انتهاء الانيميشن
-        sideMenu.addEventListener("animationend", function handler() {
-          sideMenu.classList.remove("active");
-          sideMenu.removeEventListener("animationend", handler);
-        });
+        const closeAnim = sideMenu.animate(keyframes_close, options);
+        // ملاحظة: تم استبدال حدث "animationend" (لا يُطلق مع animate())
+        // بـ closeAnim.finished لأنه الطريقة الصحيحة لمعرفة انتهاء أنيميشن Web Animations API
+        closeAnim.finished
+          .then(() => {
+            sideMenu.classList.remove("active");
+          })
+          .catch(() => {
+            // تجاهل الإلغاء (مثلاً إن بدأ أنيميشن آخر قبل الانتهاء)
+          });
       }
     });
 
@@ -284,17 +279,21 @@
         // افترض أن نقوم بإغلاق القائمة عندما يختار مستخدم خياراً في القائمة
         if (checkbox.checked) {
           checkbox.checked = false;
-          sideMenu.classList.remove("active");
-          sideMenu.animate(keyframes_close, options).play();
+          const closeAnim = sideMenu.animate(keyframes_close, options);
+          closeAnim.finished
+            .then(() => {
+              sideMenu.classList.remove("active");
+            })
+            .catch(() => {});
         }
       });
     });
   };
 
-  const noneExisting = () =>{
+  const noneExisting = () => {
     // مثال: إذا كان هناك رابط غير مكتمل، نعرض رسالة مؤقتة
-    document.querySelectorAll('a[href="#nonexistent"]').forEach(a => {
-      a.addEventListener('click', function(e){
+    document.querySelectorAll('a[href="#nonexistent"]').forEach((a) => {
+      a.addEventListener("click", function (e) {
         e.preventDefault();
         alert("Attention: This link is currently under construction and will be activated soon.");
       });
@@ -302,11 +301,11 @@
   };
 
   // تشغيل التهيئة عند تحميل DOM
-  document.addEventListener("DOMContentLoaded", () => {    
+  document.addEventListener("DOMContentLoaded", () => {
     initSectionTabs();
     initMyResumeTabs();
     initTheme();
-    initSkillsIntervial();
+    initSkillsInterval();
     initFormSubmission();
     initToggleMenu();
     noneExisting();
