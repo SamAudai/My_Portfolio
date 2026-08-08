@@ -976,7 +976,7 @@ section {
 .inputGroup input,
 .inputGroup textarea {
   font-size: var(--p-font);
-  padding: 1rem;
+  padding: 1.5rem;
   outline: none;
   border: .5px solid var(--body-font-color);
   background-color: transparent;
