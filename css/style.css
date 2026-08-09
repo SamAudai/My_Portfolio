@@ -973,6 +973,22 @@ section {
   position: relative;
 }
 
+/* إزالة تأثير التعبئة التلقائية من جميع الحقول */
+.inputGroup input:-webkit-autofill,
+.inputGroup input:-webkit-autofill:hover,
+.inputGroup input:-webkit-autofill:focus,
+.inputGroup input:-webkit-autofill:active,
+.inputGroup textarea:-webkit-autofill,
+.inputGroup textarea:-webkit-autofill:hover,
+.inputGroup textarea:-webkit-autofill:focus,
+.inputGroup textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  background-color: transparent !important;
+  background-clip: padding-box !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .inputGroup input,
 .inputGroup textarea {
   font-size: var(--p-font);
@@ -993,6 +1009,7 @@ section {
   pointer-events: none;
   transition: all 0.3s ease;
   color: var(--text-color);
+  background-color: transparent;
 }
 
 .inputGroup :is(input:focus, input:valid)~label,
