@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }).init();
 
   new ThemeManager({ storage }).init();
-  new TextCarousel().init();
-  new FormSubmitter().init();
-  new MobileMenu().init();
-  new BrokenLinkGuard().init();
-  new LanguageManager({ storage }).init();
+  new LanguageManager({ storage }).init();  
   new ControlsAutoHide().init();
+  new BrokenLinkGuard().init();
+  //new TextCarousel().init();
+  //new FormSubmitter().init();
+  //new MobileMenu().init();    
 });

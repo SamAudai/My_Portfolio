@@ -26,7 +26,7 @@
   --background: rgba(25, 29, 43, 0.55);
 
   /* Typography scale (clamp = responsive) */
-  --h1-font: clamp(1.9rem, 4vw + 1rem, 3.1rem);
+  --h1-font: clamp(1.6rem, 4vw + 1rem, 3.1rem);
   --h2-font: clamp(1.3rem, 2vw + 0.8rem, 1.6rem);
   --h3-font: clamp(1rem, 1vw + 0.7rem, 1.2rem);
   --h4-font: 0.8rem;
@@ -232,7 +232,7 @@ section {
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .header-content .left-header {
@@ -256,7 +256,7 @@ section {
 }
 
 .header-content .left-header .image {
-  border-radius: var(--br-sm-2);
+  border-radius: var(--br-sm);
   height: 88%;
   width: 68%;
   margin-left: 2rem;
@@ -270,8 +270,7 @@ section {
   object-fit: cover;
   transition: all 0.4s ease-in-out;
   filter: grayscale(100%);
-  border-radius: var(--br-sm-2);
-  /* border: .5px solid var(--dark-color); */
+  border-radius: var(--br-sm);
 }
 
 .header-content .left-header .image img:hover {
@@ -283,18 +282,16 @@ section {
   flex-direction: column;
   justify-content: center;
   direction: var(--direction);
-  padding-right: 13rem;
+  margin-right: 4rem;
 }
 
 .header-content .right-header p {
   font-size: var(--h3-font);
-  line-height: 2.5rem;
   padding-bottom: 1rem;
 }
 
 .header-content .right-header h1 {
   color: var(--main-color);
-  font-size: var(--h1-font);
 }
 
 /* .logo {
@@ -313,7 +310,6 @@ section {
   border-radius: 10px;
   color: inherit;
   font-size: var(--p-font);
-  font-weight: 500;
   position: relative;
   border: 1px solid var(--body-font-color);
   display: flex;
@@ -327,7 +323,7 @@ section {
 }
 
 .main-btn .btn-text {
-  padding: 0.5rem;
+  padding: .1rem .6rem;
 }
 
 .main-btn .btn-icon {
@@ -336,7 +332,7 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 10%;
-  padding: 0.8rem;
+  padding: .6rem;
   flex-direction: row-reverse;
 }
 
@@ -361,6 +357,7 @@ section {
 /********************************CONTROL SECTION STYLE*****************************/
 
 .controls {
+  direction: ltr;
   position: fixed;
   top: 1.5rem;
   inset-inline: 0;
@@ -406,7 +403,9 @@ section {
 }
 
 /* Hover */
-.controls .control:hover {
+.controls .control:hover,
+.theme-btn:hover,
+.lang-btn:hover {
   background-color: rgba(39, 174, 96, 0.15);
   color: var(--main-color);
   transform: translateY(-2px);
@@ -417,7 +416,8 @@ section {
   transform: translateY(0) scale(0.95);
 }
 
-.controls .control i {
+.controls .control i,
+.tools i {
   font-size: var(--h3-font);
   color: inherit;
   pointer-events: none;
@@ -460,25 +460,23 @@ section {
   align-items: center;
   gap: 0.6rem;
 
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
   background: var(--background);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
 
-.tools i {
-  font-size: var(--h3-font);
-  color: var(--light-color);
-  pointer-events: none;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .lang-btn,
 .theme-btn {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   margin: 0;
   border-radius: 50%;
@@ -492,24 +490,6 @@ section {
     transform 0.2s ease,
     background-color 0.25s ease,
     color 0.25s ease;
-}
-
-.lang-btn:hover,
-.theme-btn:hover {
-  background-color: rgba(39, 174, 96, 0.15);
-  color: var(--main-color);
-}
-
-.lang-btn:active,
-.theme-btn:active {
-  transform: scale(0.95);
-}
-
-.lang-btn i,
-.theme-btn i {
-  font-size: var(--h3-font);
-  color: inherit;
-  pointer-events: none;
 }
 
 /********************************ABOUT SECTION STYLE*****************************/
