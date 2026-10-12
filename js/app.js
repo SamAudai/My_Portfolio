@@ -19,6 +19,7 @@ import { TextCarousel } from "./modules/textCarousel.js";
 import { MobileMenu } from "./modules/mobileMenu.js";
 import { BrokenLinkGuard } from "./modules/brokenLinkGuard.js";
 import { LanguageManager } from "./modules/languageManager.js";
+import { ControlsAutoHide } from"./modules/ControlsAutoHide.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const storage = new StorageService();
@@ -49,4 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
   new MobileMenu().init();
   new BrokenLinkGuard().init();
   new LanguageManager({ storage }).init();
+  new ControlsAutoHide().init();
 });
