@@ -7,6 +7,7 @@
  * وإظهار رسالة توضيحية بدل الانتقال لرابط غير موجود.
  */
 export class BrokenLinkGuard {
+  
   /**
    * @param {Object} [config]
    * @param {string} [config.selector]

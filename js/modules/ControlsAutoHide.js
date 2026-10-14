@@ -30,7 +30,7 @@ export class ControlsAutoHide {
     showTimeoutMs = 1200,
     sectionChangedEvent = "section:changed",
   } = {}) {
-    // ✅ نُخزّن مصفوفة عناصر لتسهيل المرور عليها
+    // نُخزّن مصفوفة عناصر لتسهيل المرور عليها
     this.targets = Array.from(
       document.querySelectorAll(controlsSelector)
     );
@@ -58,7 +58,7 @@ export class ControlsAutoHide {
    * @returns {ControlsAutoHide}
    */
   init() {
-    // ✅ فحص فعّال: لا عناصر → لا شيء لفعله
+    // فحص فعّال: لا عناصر → لا شيء لفعله
     if (this.targets.length === 0) return this;
 
     // احترام تفضيل المستخدم لتقليل الحركة
@@ -165,7 +165,7 @@ export class ControlsAutoHide {
   }
 
   _hide() {
-    // ✅ المرور على كل العناصر
+    // المرور على كل العناصر
     for (const el of this.targets) el.classList.add(this.hideClass);
   }
 
