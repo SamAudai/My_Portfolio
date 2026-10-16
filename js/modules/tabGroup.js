@@ -72,6 +72,7 @@ export class TabGroup {
 
         this.storage.set(this.storageTriggerKey, trigger.id || "");
         this.storage.set(this.storageTargetKey, trigger.dataset.id || "");
+        window.scrollTo({ top: 0, behavior: "instant" });
       });
     });
   }
