@@ -187,7 +187,7 @@ section {
   width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-  padding: clamp(4rem, 6vw, 6rem) 0;
+  padding: clamp(5rem, 8vw, 7rem) 0 3rem;
 }
 
 .main-title {
@@ -211,15 +211,18 @@ section {
 }
 
 .main-title h2 .bg-text {
-  position: absolute;
+   position: absolute;
   top: -30%;
-  left: -25%;
-  right: -25%;
+  left: 50%;                          /* ← نقطة التمركز */
+  transform: translateX(-50%);        /* ← إزاحة بمقدار نصف العرض */
   color: var(--title-primary);
   transition: all 0.5s ease-in-out;
   z-index: -1;
   font-weight: 800;
   font-size: 5.7rem;
+  white-space: nowrap;                /* ← لا يلتف النص */
+  pointer-events: none;               /* ← لا يستجيب للفأرة */
+  user-select: none;
 }
 
 .port-text {
@@ -251,7 +254,7 @@ section {
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 .header-content .left-header {
@@ -413,6 +416,7 @@ section {
   align-items: center;
   margin: 0;
   border: none;
+  z-index: 101;
   color: var(--text-color);
   transition:
     transform 0.2s ease,
@@ -1033,7 +1037,7 @@ section {
   }
 
   /* --- Tools: أعلى اليمين --- */
-  .tools {
+   .tools {
     top: 1rem;
     inset-inline-end: 1rem;
     inset-inline-start: auto;
@@ -1129,30 +1133,30 @@ section {
     top: 0.75rem;
     inset-inline: 0;
     margin-inline: auto;
+    max-width: calc(100% - 9rem);
     width: fit-content;
     max-width: calc(100% - 6.5rem); /* يترك ~104px للأدوات */
-    gap: 0.15rem;
-    padding: 0.35rem 0.5rem;
+    gap: 0.1rem;
+    padding: 0.35rem 0.4rem;
     border-radius: 999px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   }
 
   .controls .control {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .controls .control i {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   /* --- Tools: أعلى اليمين، مدمج --- */
-  .tools {
+   .tools {
     top: 0.75rem;
-    inset-inline-end: 0.5rem;
-    inset-inline-start: auto;
-    gap: 0.15rem;
-    padding: 0.3rem 0.4rem;
+    inset-inline-end: 0.4rem;
+    gap: 0.1rem;
+    padding: 0.3rem 0.35rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   }
 
@@ -1370,10 +1374,9 @@ section {
     font-size: 0.8rem;
   }
 
-  .tools {
+    .tools {
     top: 0.5rem;
-    inset-inline-end: 0.5rem;
-    inset-inline-start: auto;
+    inset-inline-end: 0.4rem;
     gap: 0.1rem;
     padding: 0.25rem 0.35rem;
   }
