@@ -111,9 +111,17 @@ export class LanguageManager {
   _applyDirectionAndToggleLabel(lang) {
     const isRtl = this.rtlLangs.includes(lang);
     this.root.setAttribute("dir", isRtl ? "rtl" : "ltr");
+    // ضروري لإمكانية الوصول (نطق صحيح لقارئات الشاشة) ولتفعيل أي CSS
+    // يعتمد على html[lang="ar"]
+    this.root.setAttribute("lang", lang);
     document.body.classList.toggle("arabic-mode", isRtl);
     if (this.toggle) {
-      this.toggle.textContent = isRtl ? "EN" : "AR";
+      // لا نستخدم textContent هنا لأن .lang-btn يحتوي على أيقونة <i> كابن،
+      // وتعيين textContent كان يمسحها نهائيًا من الـ DOM عند كل ضغطة.
+      this.toggle.setAttribute(
+        "aria-label",
+        isRtl ? "Switch to English" : "التبديل إلى الإنجليزية"
+      );
     }
   }
 

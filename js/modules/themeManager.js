@@ -14,7 +14,7 @@ export class ThemeManager {
    * @param {string} [config.toggleSelector]
    * @param {string} [config.sunSelector]
    * @param {string} [config.moonSelector]
-   * @param {string} [config.darkModeBodyClass] الصنف المُضاف على body عند التفعيل
+   * @param {string} [config.lightModeBodyClass] الصنف (المُعرَّف في style.css) الذي يُضاف على body عند تفعيل الوضع الفاتح
    * @param {string} [config.storageKey]
    */
   constructor({
@@ -22,14 +22,14 @@ export class ThemeManager {
     toggleSelector = ".theme-btn",
     sunSelector = "#sun",
     moonSelector = "#moon",
-    darkModeBodyClass = "light-mode",
+    lightModeBodyClass = "light-mode",
     storageKey = "theme",
   }) {
     this.storage = storage;
     this.toggle = document.querySelector(toggleSelector);
     this.sun = document.querySelector(sunSelector);
     this.moon = document.querySelector(moonSelector);
-    this.darkModeBodyClass = darkModeBodyClass;
+    this.lightModeBodyClass = lightModeBodyClass;
     this.storageKey = storageKey;
   }
 
@@ -58,7 +58,9 @@ export class ThemeManager {
   }
 
   _apply(isDark) {
-    document.body.classList.toggle(this.darkModeBodyClass, isDark);
+    // style.css يقلب الألوان إلى الوضع الفاتح عندما يكون lightModeBodyClass موجودًا،
+    // لذا نضيفه فقط عندما لا نكون في الوضع الداكن (!isDark).
+    document.body.classList.toggle(this.lightModeBodyClass, !isDark);
     this.sun.style.display = isDark ? "none" : "inline-flex";
     this.moon.style.display = isDark ? "inline-flex" : "none";
   }
@@ -69,8 +71,10 @@ export class ThemeManager {
   }
 
   _handleToggleClick() {
-    const isDark = document.body.classList.toggle(this.darkModeBodyClass);
-    this._apply(isDark);
-    this._persist(isDark);
+    // الحالة الحالية هي "داكن" إن لم يكن كلاس الوضع الفاتح موجودًا على body
+    const currentIsDark = !document.body.classList.contains(this.lightModeBodyClass);
+    const nextIsDark = !currentIsDark;
+    this._apply(nextIsDark);
+    this._persist(nextIsDark);
   }
 }

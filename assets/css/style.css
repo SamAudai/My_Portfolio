@@ -18,7 +18,7 @@
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: swap; /* يمنع اختفاء النص */
   src: url('../Fonts/Poppins/Poppins-Bold.ttf') format('truetype');
 }
@@ -27,7 +27,7 @@
 @font-face {
   font-family: 'Tajawal';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: swap;
   src: url('../Fonts/Tajawal/Tajawal-Bold.ttf') format('truetype');
 }
@@ -66,8 +66,6 @@
   --tablink-left: 0;
   --tablink-right: auto;
 
-  --lable-right: auto;
-  --lable-left: 1.2rem;
 
   /* Layout */
   --section-padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 8vw, 12rem);
@@ -120,7 +118,7 @@ html {
 
 body {
   background-color: var(--dark-color);
-  font-family: var(--en-font);
+  font-family: inherit;
   font-size: var(--p-font);
   color: var(--text-color);
   line-height: 1.6;
@@ -136,18 +134,16 @@ html[lang="ar"],
   --direction: rtl;
   transition: all 0.4s ease-in-out;
   font-family: var(--ar-font);
-  --margin-right: none;
+  --margin-right: 0;
   --margin-left: 3rem;
-  --tooltip-right: none;
+  --tooltip-right: auto;
   --tooltip-left: -20px;
   --border-left: none;
   --border-right: 1px solid var(--body-font-color);
-  --timeline-left: none;
+  --timeline-left: auto;
   --timeline-right: -1.6rem;
   --timeline-padding: 4rem;
-  --lable-right: 1.2rem;
-  --lable-left: none;
-  --tablink-left: none;
+  --tablink-left: auto;
   --tablink-right: 0;
   --transform-btn: translateX(100%);
 }
@@ -916,11 +912,6 @@ section {
   padding: var(--section-padding);
 }
 
-.left-contact .contact-icon {
-  display: inline-flex;
-  flex-direction: row;
-}
-
 .left-contact {
   display: flex;
   justify-content: space-between;
@@ -1002,8 +993,7 @@ section {
 .copyright {
   position: fixed;
   width: fit-content;
-  left: 1rem;
-  right: var(--control-right);
+  inset-inline-start: 1rem;
   bottom: 0;
   text-align: center;
   text-transform: capitalize;

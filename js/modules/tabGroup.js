@@ -73,6 +73,14 @@ export class TabGroup {
         this.storage.set(this.storageTriggerKey, trigger.id || "");
         this.storage.set(this.storageTargetKey, trigger.dataset.id || "");
         window.scrollTo({ top: 0, behavior: "instant" });
+
+        // يُعلم ControlsAutoHide (ومستمعين آخرين محتملين) بأن القسم/التبويب
+        // النشط تغيّر، ليُظهر أشرطة التحكم المخفية أثناء التمرير.
+        document.dispatchEvent(
+          new CustomEvent("section:changed", {
+            detail: { targetId: trigger.dataset.id },
+          })
+        );
       });
     });
   }
